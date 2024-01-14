@@ -1,0 +1,108 @@
+[gd_scene load_steps=20 format=3 uid="uid://cuohw8cqjwppe"]
+
+[ext_resource type="Texture2D" uid="uid://cxpns1qi0gie6" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="1_g5tw0"]
+[ext_resource type="Theme" uid="uid://b32l21r5ntiqo" path="res://Themes/game_theme.tres" id="1_y24xl"]
+[ext_resource type="Texture2D" uid="uid://cfndov423mxgy" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/02.png" id="2_xmjl4"]
+[ext_resource type="Texture2D" uid="uid://caknffvmwk2hl" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/03.png" id="3_qayme"]
+[ext_resource type="Texture2D" uid="uid://cals7kgrmu720" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/04.png" id="4_lgjdd"]
+[ext_resource type="Texture2D" uid="uid://c14mbenas0352" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/01.png" id="5_a1b37"]
+[ext_resource type="Texture2D" uid="uid://brio85pl0ygon" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/02.png" id="6_28cnk"]
+[ext_resource type="Texture2D" uid="uid://la3ot0dtaknp" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/03.png" id="7_y30vt"]
+[ext_resource type="Texture2D" uid="uid://vlss1lbdaxb0" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/04.png" id="8_rer4g"]
+[ext_resource type="Texture2D" uid="uid://4gqxfssj6p85" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/01.png" id="9_qmrrp"]
+[ext_resource type="Texture2D" uid="uid://ds2javyn77nuf" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/02.png" id="10_6oh0b"]
+[ext_resource type="Texture2D" uid="uid://cjsu566qavhu8" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/03.png" id="11_woxij"]
+[ext_resource type="Texture2D" uid="uid://dnv7s7ncd4poa" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/04.png" id="12_75w76"]
+[ext_resource type="Texture2D" uid="uid://c06edweac3dp5" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/05.png" id="13_qo8mp"]
+[ext_resource type="Texture2D" uid="uid://cia7comevnyi5" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/06.png" id="14_31smh"]
+[ext_resource type="Texture2D" uid="uid://bhx0bvlqerpb4" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/07.png" id="15_hqhlx"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_3n6s4"]
+frames = 4
+pause = true
+speed_scale = 4.0
+frame_0/texture = ExtResource("1_g5tw0")
+frame_1/texture = ExtResource("2_xmjl4")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_qayme")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_lgjdd")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_byvj8"]
+frames = 4
+pause = true
+speed_scale = 4.0
+frame_0/texture = ExtResource("5_a1b37")
+frame_1/texture = ExtResource("6_28cnk")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("7_y30vt")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("8_rer4g")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_sa6gx"]
+frames = 7
+pause = true
+speed_scale = 4.0
+frame_0/texture = ExtResource("9_qmrrp")
+frame_1/texture = ExtResource("10_6oh0b")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("11_woxij")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("12_75w76")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("13_qo8mp")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("14_31smh")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("15_hqhlx")
+frame_6/duration = 1.0
+
+[node name="Resources" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 172.0
+offset_bottom = 486.0
+theme = ExtResource("1_y24xl")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="GoldCoin" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_3n6s4")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="GoldLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Gold - 0"
+horizontal_alignment = 1
+
+[node name="Gem" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_byvj8")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="GemLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Gems - 0"
+horizontal_alignment = 1
+
+[node name="DewDrops" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_sa6gx")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="DewLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Dew Drops - 0"
+horizontal_alignment = 1
