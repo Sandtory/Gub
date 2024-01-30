@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://c341s4d562uxl" path="res://art/Ground/Spritesheets/Leafbug.png" id="1_8sywn"]
 [ext_resource type="Script" path="res://Characters/grub.gd" id="1_hgjit"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i78rd"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h0ba7"]
 radius = 8.0
-height = 18.0
+height = 16.0
 
 [sub_resource type="Animation" id="Animation_gb0h2"]
 length = 0.001
@@ -205,17 +205,19 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Grub" type="CharacterBody2D"]
 script = ExtResource("1_hgjit")
-move_speed = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_8sywn")
 hframes = 8
 vframes = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 5
-shape = SubResource("CapsuleShape2D_i78rd")
+position = Vector2(2.08165e-12, -2)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CapsuleShape2D_h0ba7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -229,3 +231,7 @@ parameters/conditions/idle = false
 parameters/conditions/is_moving = false
 parameters/idle/blend_position = Vector2(0, 1.02819)
 parameters/walk/blend_position = Vector2(0, 0)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

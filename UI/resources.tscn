@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://cuohw8cqjwppe"]
+[gd_scene load_steps=24 format=3 uid="uid://cuohw8cqjwppe"]
 
+[ext_resource type="Script" path="res://UI/resources.gd" id="1_4lnv3"]
 [ext_resource type="Texture2D" uid="uid://cxpns1qi0gie6" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="1_g5tw0"]
 [ext_resource type="Theme" uid="uid://b32l21r5ntiqo" path="res://Themes/game_theme.tres" id="1_y24xl"]
 [ext_resource type="Texture2D" uid="uid://cfndov423mxgy" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/02.png" id="2_xmjl4"]
@@ -19,7 +20,6 @@
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_3n6s4"]
 frames = 4
-pause = true
 speed_scale = 4.0
 frame_0/texture = ExtResource("1_g5tw0")
 frame_1/texture = ExtResource("2_xmjl4")
@@ -29,9 +29,26 @@ frame_2/duration = 1.0
 frame_3/texture = ExtResource("4_lgjdd")
 frame_3/duration = 1.0
 
+[sub_resource type="GDScript" id="GDScript_81r2v"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"Gub Bucks: \" + str(Game.GubBucks)
+
+func _on_button_pressed():
+	Game.GubBucks += 1
+	Utils.save_game()
+"
+
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_byvj8"]
 frames = 4
-pause = true
 speed_scale = 4.0
 frame_0/texture = ExtResource("5_a1b37")
 frame_1/texture = ExtResource("6_28cnk")
@@ -41,9 +58,27 @@ frame_2/duration = 1.0
 frame_3/texture = ExtResource("8_rer4g")
 frame_3/duration = 1.0
 
+[sub_resource type="GDScript" id="GDScript_178er"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"Gems: \" + str(Game.Gems)
+
+
+func _on_gem_button_pressed():
+	Game.Gems += 1
+	Utils.save_game()
+"
+
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_sa6gx"]
 frames = 7
-pause = true
 speed_scale = 4.0
 frame_0/texture = ExtResource("9_qmrrp")
 frame_1/texture = ExtResource("10_6oh0b")
@@ -59,13 +94,35 @@ frame_5/duration = 1.0
 frame_6/texture = ExtResource("15_hqhlx")
 frame_6/duration = 1.0
 
+[sub_resource type="GDScript" id="GDScript_webu3"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"Dew Drops: \" + str(Game.DewDrops)
+
+
+func _on_dew_button_pressed():
+	Game.DewDrops += 1
+	Utils.save_game() # Replace with function body.
+"
+
 [node name="Resources" type="CanvasLayer"]
+scale = Vector2(0.6, 0.6)
+transform = Transform2D(0.6, 0, 0, 0.6, 0, 0)
+script = ExtResource("1_4lnv3")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 172.0
-offset_bottom = 486.0
+offset_left = 106.667
+offset_top = 333.333
+offset_right = 282.667
+offset_bottom = 823.333
 theme = ExtResource("1_y24xl")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -82,8 +139,8 @@ stretch_mode = 5
 
 [node name="GoldLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "Gold - 0"
 horizontal_alignment = 1
+script = SubResource("GDScript_81r2v")
 
 [node name="Gem" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
@@ -93,8 +150,8 @@ stretch_mode = 5
 
 [node name="GemLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "Gems - 0"
 horizontal_alignment = 1
+script = SubResource("GDScript_178er")
 
 [node name="DewDrops" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
@@ -104,5 +161,30 @@ stretch_mode = 5
 
 [node name="DewLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "Dew Drops - 0"
 horizontal_alignment = 1
+script = SubResource("GDScript_webu3")
+
+[node name="GoldButton" type="Button" parent="."]
+offset_left = 413.0
+offset_top = 399.666
+offset_right = 587.0
+offset_bottom = 466.666
+text = "Mine gold"
+
+[node name="GemButton" type="Button" parent="."]
+offset_left = 413.333
+offset_top = 533.333
+offset_right = 586.333
+offset_bottom = 600.333
+text = "Mine gems"
+
+[node name="DewButton" type="Button" parent="."]
+offset_left = 413.333
+offset_top = 679.999
+offset_right = 586.333
+offset_bottom = 746.999
+text = "Collect dew drops"
+
+[connection signal="pressed" from="GoldButton" to="PanelContainer/MarginContainer/GridContainer/GoldLabel" method="_on_button_pressed"]
+[connection signal="pressed" from="GemButton" to="PanelContainer/MarginContainer/GridContainer/GemLabel" method="_on_gem_button_pressed"]
+[connection signal="pressed" from="DewButton" to="PanelContainer/MarginContainer/GridContainer/DewLabel" method="_on_dew_button_pressed"]

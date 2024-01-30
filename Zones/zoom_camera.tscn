@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://df8bew2e0p4jk"]
+
+[ext_resource type="Script" path="res://Zones/ZoomCamera.gd" id="1_4ei13"]
+
+[node name="ZoomCamera" type="Camera2D"]
+position = Vector2(544, 960)
+script = ExtResource("1_4ei13")
