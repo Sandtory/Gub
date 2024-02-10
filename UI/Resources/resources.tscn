@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cuohw8cqjwppe"]
+[gd_scene load_steps=26 format=3 uid="uid://cuohw8cqjwppe"]
 
 [ext_resource type="Script" path="res://UI/resources.gd" id="1_4lnv3"]
 [ext_resource type="Texture2D" uid="uid://cxpns1qi0gie6" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="1_g5tw0"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://c06edweac3dp5" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/05.png" id="13_qo8mp"]
 [ext_resource type="Texture2D" uid="uid://cia7comevnyi5" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/06.png" id="14_31smh"]
 [ext_resource type="Texture2D" uid="uid://bhx0bvlqerpb4" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/07.png" id="15_hqhlx"]
+[ext_resource type="Texture2D" uid="uid://x6glt1n666oe" path="res://art/Emilys Buttons/Button - clear.png" id="18_4p4ly"]
+[ext_resource type="Texture2D" uid="uid://d2lbvc1ui5fyn" path="res://art/Emilys Buttons/Button - clear hover.png" id="19_778u7"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_3n6s4"]
 frames = 4
@@ -43,7 +45,7 @@ func _process(delta):
 	text = \"Gub Bucks: \" + str(Game.GubBucks)
 
 func _on_button_pressed():
-	Game.GubBucks += 1
+	Game.GubBucks += 100
 	Utils.save_game()
 "
 
@@ -119,10 +121,10 @@ transform = Transform2D(0.6, 0, 0, 0.6, 0, 0)
 script = ExtResource("1_4lnv3")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-offset_left = 106.667
-offset_top = 333.333
-offset_right = 282.667
-offset_bottom = 823.333
+offset_left = 160.0
+offset_top = 147.0
+offset_right = 336.0
+offset_bottom = 280.0
 theme = ExtResource("1_y24xl")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -143,47 +145,70 @@ horizontal_alignment = 1
 script = SubResource("GDScript_81r2v")
 
 [node name="Gem" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+visible = false
 layout_mode = 2
 texture = SubResource("AnimatedTexture_byvj8")
 expand_mode = 4
 stretch_mode = 5
 
 [node name="GemLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+visible = false
 layout_mode = 2
 horizontal_alignment = 1
 script = SubResource("GDScript_178er")
 
 [node name="DewDrops" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+visible = false
 layout_mode = 2
 texture = SubResource("AnimatedTexture_sa6gx")
 expand_mode = 4
 stretch_mode = 5
 
 [node name="DewLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+visible = false
 layout_mode = 2
 horizontal_alignment = 1
 script = SubResource("GDScript_webu3")
 
-[node name="GoldButton" type="Button" parent="."]
-offset_left = 413.0
-offset_top = 399.666
-offset_right = 587.0
-offset_bottom = 466.666
+[node name="GoldButton" type="TextureButton" parent="."]
+offset_left = 120.0
+offset_top = 2946.67
+offset_right = 380.0
+offset_bottom = 3090.67
+texture_normal = ExtResource("18_4p4ly")
+texture_pressed = ExtResource("19_778u7")
+
+[node name="Label" type="Label" parent="GoldButton"]
+modulate = Color(0.0901961, 0.0901961, 0.0901961, 1)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 125.0
+offset_bottom = 66.0
+scale = Vector2(2.2, 2.2)
 text = "Mine gold"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="GemButton" type="Button" parent="."]
-offset_left = 413.333
-offset_top = 533.333
-offset_right = 586.333
-offset_bottom = 600.333
-text = "Mine gems"
+[node name="GemButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 533.333
+offset_top = 733.333
+offset_right = 793.333
+offset_bottom = 877.333
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("18_4p4ly")
+texture_pressed = ExtResource("19_778u7")
 
-[node name="DewButton" type="Button" parent="."]
-offset_left = 413.333
-offset_top = 679.999
-offset_right = 586.333
-offset_bottom = 746.999
-text = "Collect dew drops"
+[node name="DewButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 533.333
+offset_top = 1053.33
+offset_right = 793.333
+offset_bottom = 1197.33
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("18_4p4ly")
+texture_pressed = ExtResource("19_778u7")
 
 [connection signal="pressed" from="GoldButton" to="PanelContainer/MarginContainer/GridContainer/GoldLabel" method="_on_button_pressed"]
 [connection signal="pressed" from="GemButton" to="PanelContainer/MarginContainer/GridContainer/GemLabel" method="_on_gem_button_pressed"]

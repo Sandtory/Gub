@@ -1,37 +1,37 @@
 [gd_scene load_steps=50 format=3 uid="uid://1rsexs3ywkcd"]
 
-[ext_resource type="Script" path="res://worldBG/bg.gd" id="1_cvc2o"]
-[ext_resource type="Texture2D" uid="uid://dmovh612phwl6" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="1_ea7vm"]
-[ext_resource type="Texture2D" uid="uid://dj1os8svj1gmq" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Big Clouds.png" id="3_dqy4y"]
-[ext_resource type="Texture2D" uid="uid://qc23hubqxpbk" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="4_s3a4p"]
-[ext_resource type="Texture2D" uid="uid://b0m2udw7i4w7n" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="5_jihf1"]
-[ext_resource type="Texture2D" uid="uid://dswr7fgiio17d" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="6_6a74k"]
-[ext_resource type="Texture2D" uid="uid://vxegsut1v27" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" id="7_psji3"]
-[ext_resource type="Texture2D" uid="uid://u5bgtl463ilf" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 03.png" id="8_ay3cx"]
-[ext_resource type="Texture2D" uid="uid://ckfgoapn8721k" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png" id="8_blvwl"]
-[ext_resource type="Texture2D" uid="uid://iwcthdyq1vm5" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 04.png" id="10_wov8v"]
-[ext_resource type="Texture2D" uid="uid://75mkkw14cixy" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 01.png" id="11_jv8fi"]
-[ext_resource type="Texture2D" uid="uid://ckj72ag0u8n6b" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 02.png" id="12_3nb01"]
-[ext_resource type="Texture2D" uid="uid://dvmegwb3m7dv8" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 03.png" id="13_lh8ld"]
-[ext_resource type="Texture2D" uid="uid://48tlt7vvom81" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 04.png" id="14_ijfd3"]
-[ext_resource type="Texture2D" uid="uid://bvofae455n7ox" path="res://art/Flying/Spritesheets/Flying Locust.png" id="15_oxcvp"]
-[ext_resource type="Texture2D" uid="uid://cgjr5blpxfqv4" path="res://art/Flying/Spritesheets/Clampbeetle.png" id="16_1ssk5"]
-[ext_resource type="Texture2D" uid="uid://clm4uq5cn0rvt" path="res://art/Flying/Spritesheets/Voidbutterfly.png" id="16_6ssgh"]
+[ext_resource type="Script" path="res://UI/TitleScreen/TitleBackground/bg.gd" id="1_sham6"]
+[ext_resource type="Texture2D" uid="uid://dmovh612phwl6" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="2_nvrtq"]
+[ext_resource type="Texture2D" uid="uid://dj1os8svj1gmq" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Big Clouds.png" id="3_5jis1"]
+[ext_resource type="Texture2D" uid="uid://qc23hubqxpbk" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="4_obc0f"]
+[ext_resource type="Texture2D" uid="uid://b0m2udw7i4w7n" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="5_hwcu3"]
+[ext_resource type="Texture2D" uid="uid://dswr7fgiio17d" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="6_0aw1u"]
+[ext_resource type="Texture2D" uid="uid://vxegsut1v27" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" id="7_f07p5"]
+[ext_resource type="Texture2D" uid="uid://ckfgoapn8721k" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png" id="8_tpcse"]
+[ext_resource type="Texture2D" uid="uid://u5bgtl463ilf" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 03.png" id="9_tv7uk"]
+[ext_resource type="Texture2D" uid="uid://iwcthdyq1vm5" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 04.png" id="10_ovnle"]
+[ext_resource type="Texture2D" uid="uid://75mkkw14cixy" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 01.png" id="11_c4vix"]
+[ext_resource type="Texture2D" uid="uid://ckj72ag0u8n6b" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 02.png" id="12_aod6f"]
+[ext_resource type="Texture2D" uid="uid://dvmegwb3m7dv8" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 03.png" id="13_vw73t"]
+[ext_resource type="Texture2D" uid="uid://48tlt7vvom81" path="res://art/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 04.png" id="14_bq2qe"]
+[ext_resource type="Texture2D" uid="uid://bvofae455n7ox" path="res://art/Flying/Spritesheets/Flying Locust.png" id="15_si57i"]
+[ext_resource type="Texture2D" uid="uid://cgjr5blpxfqv4" path="res://art/Flying/Spritesheets/Clampbeetle.png" id="16_3tgn4"]
+[ext_resource type="Texture2D" uid="uid://clm4uq5cn0rvt" path="res://art/Flying/Spritesheets/Voidbutterfly.png" id="17_lilni"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7injq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_psji3")
+"texture": ExtResource("7_f07p5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_blvwl")
+"texture": ExtResource("8_tpcse")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_ay3cx")
+"texture": ExtResource("9_tv7uk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_wov8v")
+"texture": ExtResource("10_ovnle")
 }],
 "loop": true,
 "name": &"default",
@@ -42,16 +42,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_jv8fi")
+"texture": ExtResource("11_c4vix")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_3nb01")
+"texture": ExtResource("12_aod6f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_lh8ld")
+"texture": ExtResource("13_vw73t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_ijfd3")
+"texture": ExtResource("14_bq2qe")
 }],
 "loop": true,
 "name": &"default",
@@ -59,51 +59,51 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40ufa"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(0, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fqyd4"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(64, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tcha3"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(128, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ab8vx"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(192, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itp7t"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(256, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o52le"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(320, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ioeuc"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(384, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l50ue"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(448, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r010d"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(512, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0leoi"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(576, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_al6i6"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(640, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4fxx"]
-atlas = ExtResource("15_oxcvp")
+atlas = ExtResource("15_si57i")
 region = Rect2(704, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lfkt6"]
@@ -195,35 +195,35 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5itpp"]
-atlas = ExtResource("16_1ssk5")
+atlas = ExtResource("16_3tgn4")
 region = Rect2(0, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cj8gp"]
-atlas = ExtResource("16_1ssk5")
+atlas = ExtResource("16_3tgn4")
 region = Rect2(64, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_alio5"]
-atlas = ExtResource("16_1ssk5")
+atlas = ExtResource("16_3tgn4")
 region = Rect2(128, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjdu3"]
-atlas = ExtResource("16_1ssk5")
+atlas = ExtResource("16_3tgn4")
 region = Rect2(192, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpkiq"]
-atlas = ExtResource("16_1ssk5")
+atlas = ExtResource("16_3tgn4")
 region = Rect2(256, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysjiu"]
-atlas = ExtResource("16_1ssk5")
+atlas = ExtResource("16_3tgn4")
 region = Rect2(320, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y5u0r"]
-atlas = ExtResource("16_1ssk5")
+atlas = ExtResource("16_3tgn4")
 region = Rect2(384, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bawsj"]
-atlas = ExtResource("16_1ssk5")
+atlas = ExtResource("16_3tgn4")
 region = Rect2(448, 320, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yesom"]
@@ -259,27 +259,27 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyncm"]
-atlas = ExtResource("16_6ssgh")
+atlas = ExtResource("17_lilni")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vk0ar"]
-atlas = ExtResource("16_6ssgh")
+atlas = ExtResource("17_lilni")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mgwtk"]
-atlas = ExtResource("16_6ssgh")
+atlas = ExtResource("17_lilni")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swfs6"]
-atlas = ExtResource("16_6ssgh")
+atlas = ExtResource("17_lilni")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1j4pl"]
-atlas = ExtResource("16_6ssgh")
+atlas = ExtResource("17_lilni")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w1hx0"]
-atlas = ExtResource("16_6ssgh")
+atlas = ExtResource("17_lilni")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tedng"]
@@ -309,7 +309,7 @@ animations = [{
 }]
 
 [node name="BG" type="ParallaxBackground"]
-script = ExtResource("1_cvc2o")
+script = ExtResource("1_sham6")
 
 [node name="ParallaxLayerBG" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(1080, 2.08165e-12)
@@ -317,7 +317,7 @@ motion_mirroring = Vector2(1080, 2.08165e-12)
 [node name="BgImage" type="Sprite2D" parent="ParallaxLayerBG"]
 position = Vector2(544, 960)
 scale = Vector2(2.8125, 15)
-texture = ExtResource("1_ea7vm")
+texture = ExtResource("2_nvrtq")
 
 [node name="ParallaxLayerBigClouds" type="ParallaxLayer" parent="."]
 position = Vector2(0, 568)
@@ -327,12 +327,12 @@ motion_mirroring = Vector2(872, 2.08165e-12)
 [node name="BigClouds" type="Sprite2D" parent="ParallaxLayerBigClouds"]
 position = Vector2(440, 1176)
 scale = Vector2(1.94643, 2.55941)
-texture = ExtResource("3_dqy4y")
+texture = ExtResource("3_5jis1")
 
 [node name="BigClouds2" type="Sprite2D" parent="ParallaxLayerBigClouds"]
 position = Vector2(2184, 1176)
 scale = Vector2(1.94643, 2.55941)
-texture = ExtResource("3_dqy4y")
+texture = ExtResource("3_5jis1")
 
 [node name="ParallaxLayerSmallClouds" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(1080, 2.08165e-12)
@@ -340,26 +340,26 @@ motion_mirroring = Vector2(1080, 2.08165e-12)
 [node name="SmallCloud2" type="Sprite2D" parent="ParallaxLayerSmallClouds"]
 position = Vector2(274.75, 315.25)
 scale = Vector2(2.00376, 2.1)
-texture = ExtResource("4_s3a4p")
+texture = ExtResource("4_obc0f")
 
 [node name="SmallCloud4" type="Sprite2D" parent="ParallaxLayerSmallClouds"]
 position = Vector2(648, 760)
 scale = Vector2(2.56579, 2.87857)
-texture = ExtResource("4_s3a4p")
+texture = ExtResource("4_obc0f")
 
 [node name="SmallCloud3" type="Sprite2D" parent="ParallaxLayerSmallClouds"]
 position = Vector2(912, 416)
-texture = ExtResource("5_jihf1")
+texture = ExtResource("5_hwcu3")
 
 [node name="SmallCloud1" type="Sprite2D" parent="ParallaxLayerSmallClouds"]
 position = Vector2(528, 512)
 scale = Vector2(3.85135, 2.83333)
-texture = ExtResource("6_6a74k")
+texture = ExtResource("6_0aw1u")
 
 [node name="SmallCloud5" type="Sprite2D" parent="ParallaxLayerSmallClouds"]
 position = Vector2(640, 216)
 scale = Vector2(1.49325, 1.41667)
-texture = ExtResource("6_6a74k")
+texture = ExtResource("6_0aw1u")
 
 [node name="ParallaxLayerWater" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(2.08165e-12, 2.08165e-12)

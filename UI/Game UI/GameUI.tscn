@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://dv0ffj4hwq2md"]
+
+[ext_resource type="PackedScene" uid="uid://cuohw8cqjwppe" path="res://UI/Resources/resources.tscn" id="1_5ho8r"]
+[ext_resource type="Script" path="res://UI/Game UI/GameUI.gd" id="1_kw2w7"]
+[ext_resource type="PackedScene" uid="uid://cpa3rron1m5qo" path="res://UI/Shop/Shop.tscn" id="2_1cyjk"]
+[ext_resource type="Texture2D" uid="uid://bumfwbt74q1bn" path="res://art/Emilys Buttons/Small-clear.png" id="3_xd8d6"]
+[ext_resource type="Texture2D" uid="uid://os4qjsftavrf" path="res://art/Emilys Buttons/Small-clear hover.png" id="4_3byni"]
+[ext_resource type="Texture2D" uid="uid://pb4aor1r5j3j" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Icons/18.png" id="5_4b6y6"]
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_kw2w7")
+
+[node name="Resources" parent="." instance=ExtResource("1_5ho8r")]
+
+[node name="Shop" parent="." instance=ExtResource("2_1cyjk")]
+visible = false
+
+[node name="CloseButton" type="TextureButton" parent="."]
+offset_left = 488.0
+offset_top = 1760.0
+offset_right = 640.0
+offset_bottom = 1904.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_xd8d6")
+texture_pressed = ExtResource("4_3byni")
+
+[node name="ExitLabel" type="Label" parent="CloseButton"]
+modulate = Color(0.054902, 0.054902, 0.054902, 1)
+layout_mode = 0
+offset_left = 11.0
+offset_top = -11.0
+offset_right = 48.0
+offset_bottom = 29.0
+scale = Vector2(3.7, 3.7)
+text = "Exit
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopButton" type="TextureButton" parent="."]
+offset_left = 920.0
+offset_top = 1760.0
+offset_right = 1072.0
+offset_bottom = 1904.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_xd8d6")
+texture_pressed = ExtResource("4_3byni")
+
+[node name="Sprite2D" type="Sprite2D" parent="ShopButton"]
+position = Vector2(74.9286, 68.5713)
+scale = Vector2(9.83929, 10.888)
+texture = ExtResource("5_4b6y6")
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]

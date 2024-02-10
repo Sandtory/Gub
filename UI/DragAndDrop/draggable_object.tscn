@@ -46,7 +46,7 @@ radius = 16.0
 height = 48.0
 
 [node name="DragableObject" type="Node2D"]
-position = Vector2(144, 88)
+position = Vector2(544, 1632)
 script = ExtResource("1_7udmn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

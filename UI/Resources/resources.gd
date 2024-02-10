@@ -8,7 +8,7 @@ func _process(delta):
 	update_resource()
 	
 func update_resource():
-	gold_label.text = Game.GubBucks
-	gem_label.text = Game.Gems
-	dew_label.text = Game.DewDrops
+	gold_label.text = str(Game.GubBucks)
+	gem_label.text = str(Game.Gems)
+	dew_label.text = str(Game.DewDrops)
 	

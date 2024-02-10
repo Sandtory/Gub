@@ -8,7 +8,8 @@ func save_game():
 	var data: Dictionary = {
 		"GubBucks": Game.GubBucks,
 		"Gems": Game.Gems,
-		"DewDrops": Game.DewDrops
+		"DewDrops": Game.DewDrops,
+		"Locust": Game.locust_owned
 	}
 	var jstr = JSON.stringify(data)
 	file.store_line(jstr)
@@ -21,3 +22,4 @@ func load_game():
 				Game.GubBucks = current_line["GubBucks"]
 				Game.Gems = current_line["Gems"]
 				Game.DewDrops = current_line["DewDrops"]
+				Game.locust_owned = current_line["Locust"]
