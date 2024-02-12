@@ -1,19 +1,19 @@
 [gd_scene load_steps=10 format=3 uid="uid://b80lagw2juf2f"]
 
-[ext_resource type="Script" path="res://UI/TitleScreen/ui_overlay.gd" id="1_sjl5w"]
-[ext_resource type="PackedScene" uid="uid://1rsexs3ywkcd" path="res://UI/TitleScreen/TitleBackground/bg.tscn" id="2_xjkxn"]
-[ext_resource type="Texture2D" uid="uid://bxpxr12tvj44e" path="res://art/Emilys Buttons/Button.png" id="3_rrskm"]
-[ext_resource type="Texture2D" uid="uid://c5p2i653wl0m6" path="res://art/Emilys Buttons/Button - hover.png" id="4_c4i63"]
-[ext_resource type="Texture2D" uid="uid://chba57mgla21j" path="res://art/Emilys Buttons/Property 1=Small Button (NN) - Enabled.png" id="5_5nh7a"]
-[ext_resource type="Texture2D" uid="uid://ckweaeoywrhjm" path="res://art/Emilys Buttons/Button - quit.png" id="5_mbx6l"]
-[ext_resource type="Texture2D" uid="uid://bt886ssl5hiyp" path="res://art/Sprout Land UI Sprite sheets/Icons/white icons.png" id="5_tip5b"]
-[ext_resource type="Texture2D" uid="uid://cv7ryrtk8w0y7" path="res://art/Emilys Buttons/Property 1=Small Button (NN) - Hover.png" id="6_i5s3v"]
-[ext_resource type="Texture2D" uid="uid://ccwa0ors48cvx" path="res://art/Emilys Buttons/Button - quit hover.png" id="6_q73dp"]
+[ext_resource type="Script" path="res://UI/TitleScreen/StartScreen.gd" id="1_8nqqc"]
+[ext_resource type="PackedScene" uid="uid://1rsexs3ywkcd" path="res://UI/TitleScreen/TitleBackground/bg.tscn" id="2_vnlgf"]
+[ext_resource type="Texture2D" uid="uid://bxpxr12tvj44e" path="res://art/Emilys Buttons/Button.png" id="3_53kmt"]
+[ext_resource type="Texture2D" uid="uid://c5p2i653wl0m6" path="res://art/Emilys Buttons/Button - hover.png" id="4_f8a3i"]
+[ext_resource type="Texture2D" uid="uid://ckweaeoywrhjm" path="res://art/Emilys Buttons/Button - quit.png" id="5_nc3i8"]
+[ext_resource type="Texture2D" uid="uid://ccwa0ors48cvx" path="res://art/Emilys Buttons/Button - quit hover.png" id="6_7q45b"]
+[ext_resource type="Texture2D" uid="uid://chba57mgla21j" path="res://art/Emilys Buttons/Property 1=Small Button (NN) - Enabled.png" id="7_83vsh"]
+[ext_resource type="Texture2D" uid="uid://cv7ryrtk8w0y7" path="res://art/Emilys Buttons/Property 1=Small Button (NN) - Hover.png" id="8_g7siw"]
+[ext_resource type="Texture2D" uid="uid://bt886ssl5hiyp" path="res://art/Sprout Land UI Sprite sheets/Icons/white icons.png" id="9_ah5rp"]
 
 [node name="MainScreen" type="Node2D"]
-script = ExtResource("1_sjl5w")
+script = ExtResource("1_8nqqc")
 
-[node name="BG" parent="." instance=ExtResource("2_xjkxn")]
+[node name="BG" parent="." instance=ExtResource("2_vnlgf")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 3
@@ -34,8 +34,8 @@ theme_override_constants/separation = 5
 [node name="StartButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 tooltip_text = "This button starts the game."
-texture_normal = ExtResource("3_rrskm")
-texture_pressed = ExtResource("4_c4i63")
+texture_normal = ExtResource("3_53kmt")
+texture_pressed = ExtResource("4_f8a3i")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="VBoxContainer/StartButton"]
@@ -51,8 +51,8 @@ text = "Start"
 [node name="QuitButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 tooltip_text = "This button exits the game."
-texture_normal = ExtResource("5_mbx6l")
-texture_pressed = ExtResource("6_q73dp")
+texture_normal = ExtResource("5_nc3i8")
+texture_pressed = ExtResource("6_7q45b")
 stretch_mode = 0
 
 [node name="Label3" type="Label" parent="VBoxContainer/QuitButton"]
@@ -71,14 +71,14 @@ offset_top = 1808.0
 offset_right = 1048.0
 offset_bottom = 1888.0
 tooltip_text = "This takes the player to the settings."
-texture_normal = ExtResource("5_5nh7a")
-texture_pressed = ExtResource("6_i5s3v")
+texture_normal = ExtResource("7_83vsh")
+texture_pressed = ExtResource("8_g7siw")
 stretch_mode = 0
 
 [node name="Icon" type="Sprite2D" parent="OptionsButton"]
 position = Vector2(40, 35.9999)
 scale = Vector2(3.213, 3.49999)
-texture = ExtResource("5_tip5b")
+texture = ExtResource("9_ah5rp")
 hframes = 6
 vframes = 3
 frame = 3

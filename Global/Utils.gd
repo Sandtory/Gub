@@ -9,7 +9,8 @@ func save_game():
 		"GubBucks": Game.GubBucks,
 		"Gems": Game.Gems,
 		"DewDrops": Game.DewDrops,
-		"Locust": Game.locust_owned
+		"Locust": Game.locust_owned,
+		"BuildingOne": Game.building1_owned
 	}
 	var jstr = JSON.stringify(data)
 	file.store_line(jstr)
@@ -23,3 +24,4 @@ func load_game():
 				Game.Gems = current_line["Gems"]
 				Game.DewDrops = current_line["DewDrops"]
 				Game.locust_owned = current_line["Locust"]
+				Game.building1_owned = current_line["BuildingOne"]

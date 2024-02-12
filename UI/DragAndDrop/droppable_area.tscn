@@ -6,6 +6,7 @@
 size = Vector2(128, 64)
 
 [node name="DropableArea" type="StaticBody2D" groups=["dropable"]]
+position = Vector2(512, 1688)
 script = ExtResource("1_o00ip")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["dropable"]]

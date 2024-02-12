@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpa3rron1m5qo"]
+[gd_scene load_steps=12 format=3 uid="uid://cpa3rron1m5qo"]
 
 [ext_resource type="Script" path="res://UI/Shop/Shop.gd" id="1_jefje"]
 [ext_resource type="Texture2D" uid="uid://ckd1ls8prysvg" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Inventory/Menu.png" id="2_fmf3j"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2lbvc1ui5fyn" path="res://art/Emilys Buttons/Button - clear hover.png" id="5_5mmf1"]
 [ext_resource type="Texture2D" uid="uid://boejwv7of01fj" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Small Banner/Small Banner.png" id="6_uyrb3"]
 [ext_resource type="Texture2D" uid="uid://bvofae455n7ox" path="res://art/Flying/Spritesheets/Flying Locust.png" id="7_vq3ts"]
+[ext_resource type="Texture2D" uid="uid://cjk0j6txmaer1" path="res://icon.png" id="8_ehbs6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ap0gn"]
 texture = ExtResource("2_fmf3j")
@@ -34,7 +35,7 @@ offset_right = 328.0
 offset_bottom = 336.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_r3pdg")
 
-[node name="Purchase" type="TextureButton" parent="Character"]
+[node name="PurchaseLocustButton" type="TextureButton" parent="Character"]
 layout_mode = 0
 offset_top = 136.0
 offset_right = 613.0
@@ -81,4 +82,58 @@ texture = ExtResource("7_vq3ts")
 hframes = 14
 vframes = 9
 
-[connection signal="pressed" from="Character/Purchase" to="." method="_on_purchase_pressed"]
+[node name="Building" type="Panel" parent="."]
+offset_left = 352.0
+offset_top = 160.0
+offset_right = 536.0
+offset_bottom = 336.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_r3pdg")
+
+[node name="PurchaseBuildingButton" type="TextureButton" parent="Building"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 613.0
+offset_bottom = 280.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("4_btyww")
+texture_pressed = ExtResource("5_5mmf1")
+stretch_mode = 3
+
+[node name="Banner" type="Panel" parent="Building"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -24.0
+offset_right = 160.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6tqmx")
+
+[node name="Name" type="Label" parent="Building"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 56.0
+offset_right = 136.0
+offset_bottom = 30.0
+scale = Vector2(0.8, 0.8)
+text = "Building
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cost" type="Label" parent="Building"]
+modulate = Color(0, 0.239216, 0, 1)
+layout_mode = 0
+offset_left = 56.0
+offset_top = 144.0
+offset_right = 128.0
+offset_bottom = 170.0
+text = "200g"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Building"]
+position = Vector2(90.928, 88)
+scale = Vector2(1.1585, 1)
+texture = ExtResource("8_ehbs6")
+
+[connection signal="pressed" from="Character/PurchaseLocustButton" to="." method="_on_purchase_locust_button_pressed"]
+[connection signal="pressed" from="Building/PurchaseBuildingButton" to="." method="_on_purchase_building_button_pressed"]

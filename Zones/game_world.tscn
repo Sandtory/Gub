@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cph840cfrtrob"]
+[gd_scene load_steps=16 format=3 uid="uid://cph840cfrtrob"]
 
 [ext_resource type="Texture2D" uid="uid://85cqhjscjy3b" path="res://art/NatureBackground/nature_7/Summer3.png" id="1_0xke0"]
 [ext_resource type="Texture2D" uid="uid://cj8kd4f4wpc5u" path="res://art/Tileset_pack/Bush_tileset.png" id="1_8lgcx"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dndg3l623f1gx" path="res://art/Tileset_pack/Dirt_tileset.png" id="3_ivpag"]
 [ext_resource type="Texture2D" uid="uid://bv26khsk8ohpy" path="res://art/Aventure_Tiles/Assets/Assets.png" id="4_gcqr2"]
 [ext_resource type="Texture2D" uid="uid://b5h2iilllyo08" path="res://art/PixelSpaces/PixelSpaces Free Pack.png" id="6_h56dv"]
-[ext_resource type="PackedScene" uid="uid://ys3xisthsoyq" path="res://UI/DragAndDrop/droppable_area.tscn" id="6_vlsbf"]
 [ext_resource type="PackedScene" uid="uid://dv0ffj4hwq2md" path="res://UI/Game UI/GameUI.tscn" id="11_5uphl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2nvfu"]
@@ -1595,32 +1594,5 @@ offset_top = 1736.0
 offset_right = 8224.0
 offset_bottom = 9016.0
 color = Color(0.278431, 0.176471, 0.211765, 1)
-
-[node name="Node2D" type="Node2D" parent="."]
-visible = false
-
-[node name="DropableArea" parent="Node2D" instance=ExtResource("6_vlsbf")]
-position = Vector2(384, 1568)
-
-[node name="DropableArea2" parent="Node2D" instance=ExtResource("6_vlsbf")]
-position = Vector2(704, 1696)
-
-[node name="DropableArea3" parent="Node2D" instance=ExtResource("6_vlsbf")]
-position = Vector2(448, 1504)
-
-[node name="DropableArea4" parent="Node2D" instance=ExtResource("6_vlsbf")]
-position = Vector2(640, 1504)
-
-[node name="DropableArea6" parent="Node2D" instance=ExtResource("6_vlsbf")]
-position = Vector2(704, 1632)
-
-[node name="DropableArea5" parent="Node2D" instance=ExtResource("6_vlsbf")]
-position = Vector2(704, 1568)
-
-[node name="DropableArea8" parent="Node2D" instance=ExtResource("6_vlsbf")]
-position = Vector2(384, 1696)
-
-[node name="DropableArea7" parent="Node2D" instance=ExtResource("6_vlsbf")]
-position = Vector2(384, 1632)
 
 [node name="GameUI" parent="." instance=ExtResource("11_5uphl")]

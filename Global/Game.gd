@@ -10,6 +10,7 @@ var DewDrops = 0
 
 # Locust
 var locust_owned = false
+var locust_amount = []
 
 
 # Fly
@@ -17,3 +18,9 @@ var fly_owned = false
 
 
 # Beetle
+
+
+# Building values
+
+# Building one
+var building1_owned = false

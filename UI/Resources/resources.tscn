@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://cuohw8cqjwppe"]
 
-[ext_resource type="Script" path="res://UI/resources.gd" id="1_4lnv3"]
+[ext_resource type="Script" path="res://UI/Resources/resources.gd" id="1_4lnv3"]
 [ext_resource type="Texture2D" uid="uid://cxpns1qi0gie6" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="1_g5tw0"]
 [ext_resource type="Theme" uid="uid://b32l21r5ntiqo" path="res://Themes/game_theme.tres" id="1_y24xl"]
 [ext_resource type="Texture2D" uid="uid://cfndov423mxgy" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/02.png" id="2_xmjl4"]
