@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coob7l8pu2sp0"
-path="res://.godot/imported/Property 1=Pause - Enabled.png-fd7709d727d712e952024665a13b6ef6.ctex"
+uid="uid://djrjk8rq2y3y2"
+path="res://.godot/imported/Small-shop hover.png-4bcf4d2c3f45d9997746e49d66d4bd82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Emilys Buttons/Property 1=Pause - Enabled.png"
-dest_files=["res://.godot/imported/Property 1=Pause - Enabled.png-fd7709d727d712e952024665a13b6ef6.ctex"]
+source_file="res://art/Emilys Buttons/Small-shop hover.png"
+dest_files=["res://.godot/imported/Small-shop hover.png-4bcf4d2c3f45d9997746e49d66d4bd82.ctex"]
 
 [params]
 

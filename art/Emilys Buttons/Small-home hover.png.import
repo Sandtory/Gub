@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chba57mgla21j"
-path="res://.godot/imported/Property 1=Small Button (NN) - Enabled.png-7b72ad07fab1f27917f40465765968a4.ctex"
+uid="uid://c3mtx6ltg4kml"
+path="res://.godot/imported/Small-home hover.png-b4ef2e285d873718f5ae240ebd4934d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Emilys Buttons/Property 1=Small Button (NN) - Enabled.png"
-dest_files=["res://.godot/imported/Property 1=Small Button (NN) - Enabled.png-7b72ad07fab1f27917f40465765968a4.ctex"]
+source_file="res://art/Emilys Buttons/Small-home hover.png"
+dest_files=["res://.godot/imported/Small-home hover.png-b4ef2e285d873718f5ae240ebd4934d3.ctex"]
 
 [params]
 

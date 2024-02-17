@@ -1,31 +1,42 @@
 extends CanvasLayer
 
+var locust_cost = 100
+var select = 0
+var currItem = 0
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.hide()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+	#self.hide()
 	pass
 
+func _on_purchase_button_pressed():
+	var hasItem = false
+	for i in Game.inventory:
+		if Game.inventory[i]["name"] == Game.character_shop[currItem]["name"]:
+			Game.inventory[i]["amount"] += 1
+			hasItem = true
+		if hasItem == false:
+			Game.inventory[Game.inventory.size()] = Game.character_shop[currItem]
+			
+	
+	
+
+func switchCharacters(select):
+	for i in range(Game.character_shop.size()):
+		if select == i:
+			currItem = select
+			print(Game.character_shop[currItem])
+			get_node("Control/Character/Animation").play(Game.character_shop[currItem]["name"])
+			get_node("Control/Character/Name").text = Game.character_shop[currItem]["name"]
+			get_node("Control/Description").text = Game.character_shop[currItem]["description"]
+			get_node("Control/Character/Cost").text = str(Game.character_shop[currItem]["cost"])+ "g"
 
 
-func _on_purchase_locust_button_pressed():
-	if Game.GubBucks >= 100 and Game.locust_owned == false:
-		Game.GubBucks -= 100
-		Game.locust_owned = true
-		Utils.save_game()
-		print("Locust bought!")
-	else:
-		print("Locust already owned!")
+func _on_next_pressed():
+	switchCharacters(currItem+1)
+		
 
-
-func _on_purchase_building_button_pressed():
-	if Game.GubBucks >= 200 and Game.building1_owned == false:
-		Game.GubBucks -= 200
-		Game.building1_owned = true
-		Utils.save_game()
-		print("Building One Bought")
-	else:
-		print("Building one already owned!")
+func _on_prev_pressed():
+	switchCharacters(currItem-1)
+	

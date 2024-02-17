@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpa3rron1m5qo"]
+[gd_scene load_steps=59 format=3 uid="uid://cpa3rron1m5qo"]
 
 [ext_resource type="Script" path="res://UI/Shop/Shop.gd" id="1_jefje"]
 [ext_resource type="Texture2D" uid="uid://ckd1ls8prysvg" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Inventory/Menu.png" id="2_fmf3j"]
@@ -6,11 +6,71 @@
 [ext_resource type="Texture2D" uid="uid://x6glt1n666oe" path="res://art/Emilys Buttons/Button - clear.png" id="4_btyww"]
 [ext_resource type="Texture2D" uid="uid://d2lbvc1ui5fyn" path="res://art/Emilys Buttons/Button - clear hover.png" id="5_5mmf1"]
 [ext_resource type="Texture2D" uid="uid://boejwv7of01fj" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Small Banner/Small Banner.png" id="6_uyrb3"]
+[ext_resource type="Texture2D" uid="uid://cgjr5blpxfqv4" path="res://art/Flying/Spritesheets/Clampbeetle.png" id="7_4me7m"]
 [ext_resource type="Texture2D" uid="uid://bvofae455n7ox" path="res://art/Flying/Spritesheets/Flying Locust.png" id="7_vq3ts"]
+[ext_resource type="Texture2D" uid="uid://dtopo52th05i2" path="res://art/Flying/Spritesheets/Giant Fly Sprite Sheet.png" id="8_3jvbj"]
+[ext_resource type="Texture2D" uid="uid://goyrf1yg38x5" path="res://art/Custom/Map banner flat.png" id="8_82s6j"]
 [ext_resource type="Texture2D" uid="uid://cjk0j6txmaer1" path="res://icon.png" id="8_ehbs6"]
+[ext_resource type="Texture2D" uid="uid://uhva88rpfn6w" path="res://art/Emilys Buttons/Small-play.png" id="9_32e8j"]
+[ext_resource type="Texture2D" uid="uid://crsn7clwtpav4" path="res://art/Flying/Spritesheets/Firewasp.png" id="10_1hwk3"]
+[ext_resource type="Texture2D" uid="uid://b1gysbsp30wk0" path="res://art/Emilys Buttons/Small-play hover.png" id="10_wko6j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ap0gn"]
 texture = ExtResource("2_fmf3j")
+
+[sub_resource type="Animation" id="Animation_4pjxb"]
+resource_name = "TransitionIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 2000), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_in8ke"]
+resource_name = "TransitionOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 2.08165e-12), Vector2(2.08165e-12, 2000)]
+}
+
+[sub_resource type="Animation" id="Animation_ykmyh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 1000)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6qq5b"]
+_data = {
+"RESET": SubResource("Animation_ykmyh"),
+"TransitionIn": SubResource("Animation_4pjxb"),
+"TransitionOut": SubResource("Animation_in8ke")
+}
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3pdg"]
 texture = ExtResource("3_5imp1")
@@ -18,7 +78,281 @@ texture = ExtResource("3_5imp1")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tqmx"]
 texture = ExtResource("6_uyrb3")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tls5"]
+atlas = ExtResource("7_4me7m")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80q37"]
+atlas = ExtResource("7_4me7m")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5isa1"]
+atlas = ExtResource("7_4me7m")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iwsj"]
+atlas = ExtResource("7_4me7m")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rxxl"]
+atlas = ExtResource("7_4me7m")
+region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeoqk"]
+atlas = ExtResource("7_4me7m")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c24gn"]
+atlas = ExtResource("7_4me7m")
+region = Rect2(384, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xothu"]
+atlas = ExtResource("7_4me7m")
+region = Rect2(448, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls5qw"]
+atlas = ExtResource("8_3jvbj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqxkp"]
+atlas = ExtResource("8_3jvbj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4rlp"]
+atlas = ExtResource("8_3jvbj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf7wf"]
+atlas = ExtResource("8_3jvbj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdrwv"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djqva"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_panv0"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x84p"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdhc1"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1pk1"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyngr"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fvvy"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snfre"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5q6o"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfqbx"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04k81"]
+atlas = ExtResource("7_vq3ts")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50igo"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utnb4"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkf8g"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcpqa"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tihrk"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_por3n"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y286c"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1awri"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sdvm"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(768, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwvvu"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(864, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyfqt"]
+atlas = ExtResource("10_1hwk3")
+region = Rect2(960, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ah2x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tls5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80q37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5isa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iwsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rxxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeoqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c24gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xothu")
+}],
+"loop": true,
+"name": &"Beetle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls5qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqxkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4rlp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf7wf")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdrwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djqva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_panv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x84p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdhc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1pk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyngr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fvvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snfre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5q6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfqbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04k81")
+}],
+"loop": true,
+"name": &"Locust",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50igo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utnb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkf8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcpqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tihrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_por3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y286c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1awri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sdvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwvvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyfqt")
+}],
+"loop": true,
+"name": &"Wasp",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qgvl8"]
+texture = ExtResource("8_82s6j")
+
 [node name="Shop" type="CanvasLayer"]
+process_mode = 3
+offset = Vector2(2.08165e-12, 2.08165e-12)
+transform = Transform2D(1, 0, 0, 1, 2.08165e-12, 2.08165e-12)
 script = ExtResource("1_jefje")
 
 [node name="ShopPanel" type="Panel" parent="."]
@@ -28,14 +362,28 @@ offset_right = 1016.0
 offset_bottom = 1856.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ap0gn")
 
-[node name="Character" type="Panel" parent="."]
-offset_left = 144.0
-offset_top = 160.0
-offset_right = 328.0
-offset_bottom = 336.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6qq5b")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1016.0
+offset_bottom = 1856.0
+
+[node name="Character" type="Panel" parent="Control"]
+offset_left = 112.0
+offset_top = 136.0
+offset_right = 296.0
+offset_bottom = 312.0
+scale = Vector2(4, 4)
 theme_override_styles/panel = SubResource("StyleBoxTexture_r3pdg")
 
-[node name="PurchaseLocustButton" type="TextureButton" parent="Character"]
+[node name="PurchaseButton" type="TextureButton" parent="Control/Character"]
 layout_mode = 0
 offset_top = 136.0
 offset_right = 613.0
@@ -45,7 +393,7 @@ texture_normal = ExtResource("4_btyww")
 texture_pressed = ExtResource("5_5mmf1")
 stretch_mode = 3
 
-[node name="Banner" type="Panel" parent="Character"]
+[node name="Banner" type="Panel" parent="Control/Character"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = -24.0
@@ -53,34 +401,71 @@ offset_right = 160.0
 offset_bottom = 56.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_6tqmx")
 
-[node name="Name" type="Label" parent="Character"]
+[node name="Name" type="Label" parent="Control/Character"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 56.0
 offset_right = 120.0
 offset_bottom = 26.0
-text = "Locust
-"
+text = "Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Cost" type="Label" parent="Character"]
+[node name="Cost" type="Label" parent="Control/Character"]
 modulate = Color(0, 0.239216, 0, 1)
 layout_mode = 0
 offset_left = 56.0
 offset_top = 144.0
 offset_right = 128.0
 offset_bottom = 170.0
-text = "100g"
+text = "Cost"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="Character"]
+[node name="Animation" type="AnimatedSprite2D" parent="Control/Character"]
 position = Vector2(90.4, 82.4)
 scale = Vector2(1.675, 1.675)
-texture = ExtResource("7_vq3ts")
-hframes = 14
-vframes = 9
+sprite_frames = SubResource("SpriteFrames_7ah2x")
+animation = &"Fly"
+autoplay = "Fly"
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 624.0
+offset_right = 944.0
+offset_bottom = 2016.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_qgvl8")
+
+[node name="Description" type="Label" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 248.0
+offset_top = 968.0
+offset_right = 362.0
+offset_bottom = 1072.0
+scale = Vector2(4, 4)
+text = "Description"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Prev" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = 848.0
+offset_right = 120.0
+offset_bottom = 992.0
+texture_normal = ExtResource("9_32e8j")
+texture_pressed = ExtResource("10_wko6j")
+flip_h = true
+
+[node name="Next" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 848.0
+offset_right = 984.0
+offset_bottom = 992.0
+texture_normal = ExtResource("9_32e8j")
+texture_pressed = ExtResource("10_wko6j")
 
 [node name="Building" type="Panel" parent="."]
 offset_left = 352.0
@@ -135,5 +520,7 @@ position = Vector2(90.928, 88)
 scale = Vector2(1.1585, 1)
 texture = ExtResource("8_ehbs6")
 
-[connection signal="pressed" from="Character/PurchaseLocustButton" to="." method="_on_purchase_locust_button_pressed"]
+[connection signal="pressed" from="Control/Character/PurchaseButton" to="." method="_on_purchase_button_pressed"]
+[connection signal="pressed" from="Control/Prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Building/PurchaseBuildingButton" to="." method="_on_purchase_building_button_pressed"]

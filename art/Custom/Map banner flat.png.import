@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwm68eixayptn"
-path="res://.godot/imported/Property 1=Pause - Hover.png-b0c6aa6ee34f175ed50911724a0adacb.ctex"
+uid="uid://goyrf1yg38x5"
+path="res://.godot/imported/Map banner flat.png-b76521f26b55c3b292975aecab4cac96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Emilys Buttons/Property 1=Pause - Hover.png"
-dest_files=["res://.godot/imported/Property 1=Pause - Hover.png-b0c6aa6ee34f175ed50911724a0adacb.ctex"]
+source_file="res://art/Custom/Map banner flat.png"
+dest_files=["res://.godot/imported/Map banner flat.png-b76521f26b55c3b292975aecab4cac96.ctex"]
 
 [params]
 

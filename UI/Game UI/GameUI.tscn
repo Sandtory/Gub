@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv0ffj4hwq2md"]
+[gd_scene load_steps=8 format=3 uid="uid://dv0ffj4hwq2md"]
 
 [ext_resource type="PackedScene" uid="uid://cuohw8cqjwppe" path="res://UI/Resources/resources.tscn" id="1_5ho8r"]
 [ext_resource type="Script" path="res://UI/Game UI/GameUI.gd" id="1_kw2w7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bumfwbt74q1bn" path="res://art/Emilys Buttons/Small-clear.png" id="3_xd8d6"]
 [ext_resource type="Texture2D" uid="uid://os4qjsftavrf" path="res://art/Emilys Buttons/Small-clear hover.png" id="4_3byni"]
 [ext_resource type="Texture2D" uid="uid://pb4aor1r5j3j" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Icons/18.png" id="5_4b6y6"]
+[ext_resource type="PackedScene" uid="uid://41ygdsws45xn" path="res://UI/Inventory/InventoryUI.tscn" id="7_si5ea"]
 
 [node name="GameUI" type="CanvasLayer"]
 script = ExtResource("1_kw2w7")
@@ -51,5 +52,9 @@ position = Vector2(74.9286, 68.5713)
 scale = Vector2(9.83929, 10.888)
 texture = ExtResource("5_4b6y6")
 
+[node name="InventoryUi" parent="." instance=ExtResource("7_si5ea")]
+
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
+
+[editable path="Shop"]

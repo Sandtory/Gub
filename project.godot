@@ -21,6 +21,8 @@ config/stretch/scale=1.0
 Game="*res://Global/Game.gd"
 Utils="*res://Global/Utils.gd"
 Draggable="*res://Global/Draggable.gd"
+Placeable="*res://Global/Placeable.gd"
+Purchased="res://Global/Purchased.gd"
 
 [display]
 

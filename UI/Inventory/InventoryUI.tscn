@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://41ygdsws45xn"]
+
+[ext_resource type="PackedScene" uid="uid://lkfwipfmre3i" path="res://UI/Inventory/InventoryPanel.tscn" id="1_8hlnd"]
+[ext_resource type="Script" path="res://UI/Inventory/InventoryUI.gd" id="1_ejqd6"]
+
+[node name="InventoryUi" type="CanvasLayer"]
+script = ExtResource("1_ejqd6")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 56.0
+offset_top = 56.0
+offset_right = 1032.0
+offset_bottom = 208.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 968.0
+offset_bottom = 144.0
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+
+[node name="InventoryPanel" parent="Panel/FlowContainer" instance=ExtResource("1_8hlnd")]
+layout_mode = 2

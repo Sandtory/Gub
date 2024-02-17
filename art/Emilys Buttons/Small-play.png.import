@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://445erlxlvve3"
-path="res://.godot/imported/Property 1=Play - Hover.png-8bae7733800d52cae926e216feb4f815.ctex"
+uid="uid://uhva88rpfn6w"
+path="res://.godot/imported/Small-play.png-f6f8e9e04f2c56c94f7923052688803f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Emilys Buttons/Property 1=Play - Hover.png"
-dest_files=["res://.godot/imported/Property 1=Play - Hover.png-8bae7733800d52cae926e216feb4f815.ctex"]
+source_file="res://art/Emilys Buttons/Small-play.png"
+dest_files=["res://.godot/imported/Small-play.png-f6f8e9e04f2c56c94f7923052688803f.ctex"]
 
 [params]
 

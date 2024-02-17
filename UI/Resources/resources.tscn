@@ -122,9 +122,9 @@ script = ExtResource("1_4lnv3")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_left = 160.0
-offset_top = 147.0
+offset_top = 2746.67
 offset_right = 336.0
-offset_bottom = 280.0
+offset_bottom = 2879.67
 theme = ExtResource("1_y24xl")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
