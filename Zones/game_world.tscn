@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cph840cfrtrob"]
+[gd_scene load_steps=6 format=3 uid="uid://cph840cfrtrob"]
 
 [ext_resource type="Texture2D" uid="uid://85cqhjscjy3b" path="res://art/NatureBackground/nature_7/Summer3.png" id="1_0xke0"]
 [ext_resource type="Script" path="res://Zones/game_world.gd" id="1_nm765"]
 [ext_resource type="PackedScene" uid="uid://df8bew2e0p4jk" path="res://Zones/zoom_camera.tscn" id="2_bjnbi"]
+[ext_resource type="Texture2D" uid="uid://cyt8k3l5avy53" path="res://art/Custom/TreeBg.png" id="4_66y83"]
 [ext_resource type="PackedScene" uid="uid://dv0ffj4hwq2md" path="res://UI/Game UI/GameUI.tscn" id="11_5uphl"]
 
 [node name="GameWorld" type="Node2D"]
@@ -33,5 +34,13 @@ offset_top = 1736.0
 offset_right = 8224.0
 offset_bottom = 9016.0
 color = Color(0.278431, 0.176471, 0.211765, 1)
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = -408.0
+offset_top = 16.0
+offset_right = 616.0
+offset_bottom = 1040.0
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_66y83")
 
 [node name="GameUI" parent="." instance=ExtResource("11_5uphl")]

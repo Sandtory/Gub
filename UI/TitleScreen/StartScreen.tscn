@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b80lagw2juf2f"]
+[gd_scene load_steps=8 format=3 uid="uid://b80lagw2juf2f"]
 
 [ext_resource type="Script" path="res://UI/TitleScreen/StartScreen.gd" id="1_8nqqc"]
 [ext_resource type="PackedScene" uid="uid://1rsexs3ywkcd" path="res://UI/TitleScreen/TitleBackground/bg.tscn" id="2_vnlgf"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c5p2i653wl0m6" path="res://art/Emilys Buttons/Button - hover.png" id="4_f8a3i"]
 [ext_resource type="Texture2D" uid="uid://ckweaeoywrhjm" path="res://art/Emilys Buttons/Button - quit.png" id="5_nc3i8"]
 [ext_resource type="Texture2D" uid="uid://ccwa0ors48cvx" path="res://art/Emilys Buttons/Button - quit hover.png" id="6_7q45b"]
-[ext_resource type="Texture2D" path="res://art/Emilys Buttons/Property 1=Small Button (NN) - Enabled.png" id="7_83vsh"]
-[ext_resource type="Texture2D" path="res://art/Emilys Buttons/Property 1=Small Button (NN) - Hover.png" id="8_g7siw"]
 [ext_resource type="Texture2D" uid="uid://bt886ssl5hiyp" path="res://art/Sprout Land UI Sprite sheets/Icons/white icons.png" id="9_ah5rp"]
 
 [node name="MainScreen" type="Node2D"]
@@ -71,8 +69,6 @@ offset_top = 1808.0
 offset_right = 1048.0
 offset_bottom = 1888.0
 tooltip_text = "This takes the player to the settings."
-texture_normal = ExtResource("7_83vsh")
-texture_pressed = ExtResource("8_g7siw")
 stretch_mode = 0
 
 [node name="Icon" type="Sprite2D" parent="OptionsButton"]

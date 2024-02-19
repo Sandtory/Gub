@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0daof3qfgqor"
-path="res://.godot/imported/Small-play hover.png-28cd2f336818b3b7e93952921c137f7d.ctex"
+uid="uid://do1vs0f6gnjci"
+path="res://.godot/imported/InventoryBannerOne.png-551962cb266e023673430e143eb13c58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Small-play hover.png"
-dest_files=["res://.godot/imported/Small-play hover.png-28cd2f336818b3b7e93952921c137f7d.ctex"]
+source_file="res://art/Custom/InventoryBannerOne.png"
+dest_files=["res://.godot/imported/InventoryBannerOne.png-551962cb266e023673430e143eb13c58.ctex"]
 
 [params]
 

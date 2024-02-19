@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://cuohw8cqjwppe"]
+[gd_scene load_steps=30 format=3 uid="uid://cuohw8cqjwppe"]
 
 [ext_resource type="Script" path="res://UI/Resources/resources.gd" id="1_4lnv3"]
 [ext_resource type="Texture2D" uid="uid://cxpns1qi0gie6" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="1_g5tw0"]
 [ext_resource type="Theme" uid="uid://b32l21r5ntiqo" path="res://Themes/game_theme.tres" id="1_y24xl"]
 [ext_resource type="Texture2D" uid="uid://cfndov423mxgy" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/02.png" id="2_xmjl4"]
+[ext_resource type="Texture2D" uid="uid://dcvd5rceojryu" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Inventory/16.png" id="3_4ube4"]
 [ext_resource type="Texture2D" uid="uid://caknffvmwk2hl" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/03.png" id="3_qayme"]
 [ext_resource type="Texture2D" uid="uid://cals7kgrmu720" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/04.png" id="4_lgjdd"]
 [ext_resource type="Texture2D" uid="uid://c14mbenas0352" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/01.png" id="5_a1b37"]
@@ -20,6 +21,13 @@
 [ext_resource type="Texture2D" uid="uid://x6glt1n666oe" path="res://art/Emilys Buttons/Button - clear.png" id="18_4p4ly"]
 [ext_resource type="Texture2D" uid="uid://d2lbvc1ui5fyn" path="res://art/Emilys Buttons/Button - clear hover.png" id="19_778u7"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_el7py"]
+texture = ExtResource("3_4ube4")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_3n6s4"]
 frames = 4
 speed_scale = 4.0
@@ -30,6 +38,9 @@ frame_2/texture = ExtResource("3_qayme")
 frame_2/duration = 1.0
 frame_3/texture = ExtResource("4_lgjdd")
 frame_3/duration = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ng2k5"]
+font_size = 32
 
 [sub_resource type="GDScript" id="GDScript_81r2v"]
 script/source = "extends Label
@@ -96,6 +107,9 @@ frame_5/duration = 1.0
 frame_6/texture = ExtResource("15_hqhlx")
 frame_6/duration = 1.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_wnw8r"]
+font_size = 32
+
 [sub_resource type="GDScript" id="GDScript_webu3"]
 script/source = "extends Label
 
@@ -120,61 +134,79 @@ scale = Vector2(0.6, 0.6)
 transform = Transform2D(0.6, 0, 0, 0.6, 0, 0)
 script = ExtResource("1_4lnv3")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-offset_left = 160.0
-offset_top = 2746.67
-offset_right = 336.0
-offset_bottom = 2879.67
+[node name="Panel" type="Panel" parent="."]
+offset_left = 120.0
+offset_top = 3026.67
+offset_right = 920.0
+offset_bottom = 3132.67
 theme = ExtResource("1_y24xl")
+theme_override_styles/panel = SubResource("StyleBoxTexture_el7py")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="GoldCoin" type="TextureRect" parent="Panel"]
 layout_mode = 2
-
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="GoldCoin" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+offset_top = -0.33374
+offset_right = 94.0
+offset_bottom = 93.6663
 texture = SubResource("AnimatedTexture_3n6s4")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="GoldLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="GoldLabel" type="Label" parent="Panel"]
 layout_mode = 2
+offset_left = 93.0
+offset_top = 26.0
+offset_right = 293.0
+offset_bottom = 71.0
+label_settings = SubResource("LabelSettings_ng2k5")
 horizontal_alignment = 1
 script = SubResource("GDScript_81r2v")
 
-[node name="Gem" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Gem" type="TextureRect" parent="Panel"]
 visible = false
 layout_mode = 2
+offset_left = 34.0
+offset_top = 34.0
+offset_right = 139.0
+offset_bottom = 139.0
 texture = SubResource("AnimatedTexture_byvj8")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="GemLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="GemLabel" type="Label" parent="Panel"]
 visible = false
 layout_mode = 2
+offset_left = 34.0
+offset_top = 75.0
+offset_right = 139.0
+offset_bottom = 98.0
 horizontal_alignment = 1
 script = SubResource("GDScript_178er")
 
-[node name="DewDrops" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
-visible = false
+[node name="DewDrops" type="TextureRect" parent="Panel"]
 layout_mode = 2
+offset_left = 400.0
+offset_top = 13.0
+offset_right = 480.0
+offset_bottom = 93.0
 texture = SubResource("AnimatedTexture_sa6gx")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="DewLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
-visible = false
+[node name="DewLabel" type="Label" parent="Panel"]
 layout_mode = 2
+offset_left = 520.0
+offset_top = 26.3333
+offset_right = 760.0
+offset_bottom = 79.3333
+label_settings = SubResource("LabelSettings_wnw8r")
 horizontal_alignment = 1
 script = SubResource("GDScript_webu3")
 
 [node name="GoldButton" type="TextureButton" parent="."]
-offset_left = 120.0
-offset_top = 2946.67
-offset_right = 380.0
-offset_bottom = 3090.67
+offset_left = 106.667
+offset_top = 2680.0
+offset_right = 366.667
+offset_bottom = 2824.0
 texture_normal = ExtResource("18_4p4ly")
 texture_pressed = ExtResource("19_778u7")
 
@@ -210,6 +242,6 @@ scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("18_4p4ly")
 texture_pressed = ExtResource("19_778u7")
 
-[connection signal="pressed" from="GoldButton" to="PanelContainer/MarginContainer/GridContainer/GoldLabel" method="_on_button_pressed"]
-[connection signal="pressed" from="GemButton" to="PanelContainer/MarginContainer/GridContainer/GemLabel" method="_on_gem_button_pressed"]
-[connection signal="pressed" from="DewButton" to="PanelContainer/MarginContainer/GridContainer/DewLabel" method="_on_dew_button_pressed"]
+[connection signal="pressed" from="GoldButton" to="Panel/GoldLabel" method="_on_button_pressed"]
+[connection signal="pressed" from="GemButton" to="Panel/GemLabel" method="_on_gem_button_pressed"]
+[connection signal="pressed" from="DewButton" to="Panel/DewLabel" method="_on_dew_button_pressed"]

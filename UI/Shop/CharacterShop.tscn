@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://npdjnu3qvnl7"]
-
-[node name="CharacterShop" type="CanvasLayer"]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="Panel" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0

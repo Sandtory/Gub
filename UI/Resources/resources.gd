@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var gold_label = $PanelContainer/MarginContainer/GridContainer/GoldLabel
-@onready var gem_label = $PanelContainer/MarginContainer/GridContainer/GemLabel
-@onready var dew_label = $PanelContainer/MarginContainer/GridContainer/DewLabel
+@onready var gold_label = $Panel/GoldLabel
+@onready var gem_label = $Panel/GemLabel
+@onready var dew_label = $Panel/DewLabel
 
 func _process(delta):
 	update_resource()

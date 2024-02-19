@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dv0ffj4hwq2md"]
+[gd_scene load_steps=11 format=3 uid="uid://dv0ffj4hwq2md"]
 
 [ext_resource type="PackedScene" uid="uid://cuohw8cqjwppe" path="res://UI/Resources/resources.tscn" id="1_5ho8r"]
 [ext_resource type="Script" path="res://UI/Game UI/GameUI.gd" id="1_kw2w7"]
 [ext_resource type="PackedScene" uid="uid://cpa3rron1m5qo" path="res://UI/Shop/Shop.tscn" id="2_1cyjk"]
-[ext_resource type="Texture2D" uid="uid://bumfwbt74q1bn" path="res://art/Emilys Buttons/Small-clear.png" id="3_xd8d6"]
-[ext_resource type="Texture2D" uid="uid://os4qjsftavrf" path="res://art/Emilys Buttons/Small-clear hover.png" id="4_3byni"]
-[ext_resource type="Texture2D" uid="uid://pb4aor1r5j3j" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Icons/18.png" id="5_4b6y6"]
+[ext_resource type="Texture2D" uid="uid://nwjbyon0pjxe" path="res://art/Emilys Buttons/Small-exit.png" id="4_b32v0"]
+[ext_resource type="Texture2D" uid="uid://7c87uxep0tsv" path="res://art/Emilys Buttons/Small-exit hover.png" id="5_garx3"]
+[ext_resource type="Texture2D" uid="uid://ckga0bq87dond" path="res://art/Emilys Buttons/Small-shop.png" id="6_fulju"]
+[ext_resource type="Texture2D" uid="uid://djrjk8rq2y3y2" path="res://art/Emilys Buttons/Small-shop hover.png" id="7_03w3g"]
 [ext_resource type="PackedScene" uid="uid://41ygdsws45xn" path="res://UI/Inventory/InventoryUI.tscn" id="7_si5ea"]
+[ext_resource type="Texture2D" uid="uid://csauyd1libayu" path="res://art/Emilys Buttons/Small-home.png" id="10_2lyt4"]
+[ext_resource type="Texture2D" uid="uid://c3mtx6ltg4kml" path="res://art/Emilys Buttons/Small-home hover.png" id="11_jxgnw"]
 
 [node name="GameUI" type="CanvasLayer"]
 script = ExtResource("1_kw2w7")
@@ -22,39 +25,39 @@ offset_top = 1760.0
 offset_right = 640.0
 offset_bottom = 1904.0
 scale = Vector2(0.7, 0.7)
-texture_normal = ExtResource("3_xd8d6")
-texture_pressed = ExtResource("4_3byni")
-
-[node name="ExitLabel" type="Label" parent="CloseButton"]
-modulate = Color(0.054902, 0.054902, 0.054902, 1)
-layout_mode = 0
-offset_left = 11.0
-offset_top = -11.0
-offset_right = 48.0
-offset_bottom = 29.0
-scale = Vector2(3.7, 3.7)
-text = "Exit
-"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture_normal = ExtResource("4_b32v0")
+texture_pressed = ExtResource("5_garx3")
 
 [node name="ShopButton" type="TextureButton" parent="."]
-offset_left = 920.0
-offset_top = 1760.0
-offset_right = 1072.0
-offset_bottom = 1904.0
-scale = Vector2(0.7, 0.7)
-texture_normal = ExtResource("3_xd8d6")
-texture_pressed = ExtResource("4_3byni")
-
-[node name="Sprite2D" type="Sprite2D" parent="ShopButton"]
-position = Vector2(74.9286, 68.5713)
-scale = Vector2(9.83929, 10.888)
-texture = ExtResource("5_4b6y6")
+offset_left = 928.0
+offset_top = 1816.0
+offset_right = 1080.0
+offset_bottom = 1960.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("6_fulju")
+texture_pressed = ExtResource("7_03w3g")
 
 [node name="InventoryUi" parent="." instance=ExtResource("7_si5ea")]
 
+[node name="OpenInventory" type="TextureButton" parent="."]
+offset_left = 832.0
+offset_top = 1816.0
+offset_right = 984.0
+offset_bottom = 1960.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("10_2lyt4")
+texture_pressed = ExtResource("11_jxgnw")
+
+[node name="ExitInventory" type="TextureButton" parent="."]
+offset_left = 832.0
+offset_top = 1816.0
+offset_right = 1024.0
+offset_bottom = 1960.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_b32v0")
+texture_pressed = ExtResource("5_garx3")
+
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
-
-[editable path="Shop"]
+[connection signal="pressed" from="OpenInventory" to="." method="_on_open_inventory_pressed"]
+[connection signal="pressed" from="ExitInventory" to="." method="_on_exit_inventory_pressed"]
