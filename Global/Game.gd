@@ -1,7 +1,7 @@
 extends Node
 
 
-var GubBucks = 0
+var GubBucks = 10000
 var Gems = 0
 var DewDrops = 0
 
@@ -39,7 +39,7 @@ var character_shop = {
 		"name": "Leafbug",
 		"cost": 50,
 		"description": "A leafbug can be used to gather resrouces and build",
-		"icon": preload("res://art/PreloadCharacterIcons/LavaAnt.png") 
+		"icon": preload("res://icon.png") 
 	},
 	2: {
 		"name": "Beetle",
@@ -57,7 +57,7 @@ var character_shop = {
 		"name": "Snail",
 		"cost": 320,
 		"description": "A snail will boost the morale of other insects.",
-		"icon": preload("res://art/PreloadCharacterIcons/GrizzledTreant.png")
+		"icon": preload("res://icon.png")
 	},
 	5: {
 		"name": "Magnus",

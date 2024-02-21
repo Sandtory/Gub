@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ci3xayx0amehi"]
 
 [ext_resource type="Script" path="res://UI/DragAndDrop/draggable_object.gd" id="1_7udmn"]
-[ext_resource type="Texture2D" uid="uid://bvofae455n7ox" path="res://art/Flying/Spritesheets/Flying Locust.png" id="2_1px1v"]
+[ext_resource type="Texture2D" path="res://art/Flying/Spritesheets/Flying Locust.png" id="2_1px1v"]
 
 [sub_resource type="Animation" id="Animation_i0x0a"]
 length = 0.001

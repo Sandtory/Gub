@@ -7,17 +7,39 @@ var itemCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	self.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-
-
-func _on_summon_pressed():
-	pass # Replace with function body.
+func updateInfo():
+	get_node("Name").text = itemName
+	get_node("Description").text = itemDes
 
 func _on_exit_pressed():
-	pass # Replace with function body.
+	get_node("AnimationPlayer").play("TransitionOut")
+
+func _on_summon_pressed():
+	for i in Game.inventory:
+		if Game.inventory[i]["name"] == itemName:
+			itemCount -= 1
+			if itemCount == 0:
+				# Remove item from inventory then update the inventory
+				var tempDic = {}
+				for x in Game.inventory:
+					if x > i:
+						tempDic[x-1] = Game.inventory[x]
+					elif x < i: 
+						tempDic[x] = Game.inventory[x]
+				Game.inventory.clear()
+				Game.inventory = tempDic
+				_on_exit_pressed()
+
+			else:
+				Game.inventory[i]["count"] -= 1
+			get_node("../InventoryContainer").fillInventorySlots()
+
+
+

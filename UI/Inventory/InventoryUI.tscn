@@ -108,4 +108,3 @@ script = ExtResource("4_tq2p5")
 layout_mode = 2
 
 [node name="InventoryPanelInfo" parent="." instance=ExtResource("6_f06f2")]
-visible = false

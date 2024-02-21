@@ -54,9 +54,11 @@ func _on_mouse_exited():
 func _input(event):
 	if event.is_action_pressed("click"):
 		if mouseEntered:
+			get_node("../../InventoryPanelInfo").show()
 			get_node("../../InventoryPanelInfo/Icon").texture = get_node("InventoryItem").texture
-			get_node("../../InventoryPanelInfo").text = itemName
-			get_node("../../InventoryPanelInfo").text = itemDes
-			get_node("../../InventoryPanelInfo").text = itemCost
-			get_node("../../InventoryPanelInfo").text = itemCount
+			get_node("../../InventoryPanelInfo").itemName = itemName
+			get_node("../../InventoryPanelInfo").itemDes = itemDes
+			get_node("../../InventoryPanelInfo").itemCost = itemCost
+			get_node("../../InventoryPanelInfo").itemCount = itemCount
 			get_node("../../InventoryPanelInfo/AnimationPlayer").play("TransitionIn")
+			get_node("../../InventoryPanelInfo").updateInfo()
