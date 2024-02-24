@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv0ffj4hwq2md"]
+[gd_scene load_steps=13 format=3 uid="uid://dv0ffj4hwq2md"]
 
 [ext_resource type="PackedScene" uid="uid://cuohw8cqjwppe" path="res://UI/Resources/resources.tscn" id="1_5ho8r"]
 [ext_resource type="Script" path="res://UI/Game UI/GameUI.gd" id="1_kw2w7"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://djrjk8rq2y3y2" path="res://art/Emilys Buttons/Small-shop hover.png" id="7_03w3g"]
 [ext_resource type="PackedScene" uid="uid://41ygdsws45xn" path="res://UI/Inventory/InventoryUI.tscn" id="7_si5ea"]
 [ext_resource type="Texture2D" uid="uid://csauyd1libayu" path="res://art/Emilys Buttons/Small-home.png" id="10_2lyt4"]
+[ext_resource type="Texture2D" uid="uid://cmnia5ilqspjm" path="res://art/Emilys Buttons/Small-map-brown.png" id="11_6wo8i"]
 [ext_resource type="Texture2D" uid="uid://c3mtx6ltg4kml" path="res://art/Emilys Buttons/Small-home hover.png" id="11_jxgnw"]
+[ext_resource type="Texture2D" uid="uid://cng8i07ovj4sj" path="res://art/Emilys Buttons/Small-map-brown hover.png" id="12_ihsmq"]
 
 [node name="GameUI" type="CanvasLayer"]
 script = ExtResource("1_kw2w7")
@@ -29,9 +31,9 @@ texture_normal = ExtResource("4_b32v0")
 texture_pressed = ExtResource("5_garx3")
 
 [node name="ShopButton" type="TextureButton" parent="."]
-offset_left = 928.0
+offset_left = 752.0
 offset_top = 1816.0
-offset_right = 1080.0
+offset_right = 904.0
 offset_bottom = 1960.0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("6_fulju")
@@ -40,22 +42,31 @@ texture_pressed = ExtResource("7_03w3g")
 [node name="InventoryUi" parent="." instance=ExtResource("7_si5ea")]
 
 [node name="OpenInventory" type="TextureButton" parent="."]
-offset_left = 832.0
+offset_left = 840.0
 offset_top = 1816.0
-offset_right = 984.0
+offset_right = 992.0
 offset_bottom = 1960.0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("10_2lyt4")
 texture_pressed = ExtResource("11_jxgnw")
 
 [node name="ExitInventory" type="TextureButton" parent="."]
-offset_left = 832.0
+offset_left = 840.0
 offset_top = 1816.0
-offset_right = 1024.0
+offset_right = 1032.0
 offset_bottom = 1960.0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("4_b32v0")
 texture_pressed = ExtResource("5_garx3")
+
+[node name="MapButton" type="TextureButton" parent="."]
+offset_left = 928.0
+offset_top = 1808.0
+offset_right = 1080.0
+offset_bottom = 1952.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("11_6wo8i")
+texture_pressed = ExtResource("12_ihsmq")
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]

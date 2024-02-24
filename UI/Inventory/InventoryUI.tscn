@@ -72,6 +72,7 @@ texture_margin_bottom = 10.0
 texture = ExtResource("4_2knb6")
 
 [node name="Inventory" type="CanvasLayer"]
+process_mode = 3
 offset = Vector2(2.08165e-12, 2.08165e-12)
 transform = Transform2D(1, 0, 0, 1, 2.08165e-12, 2.08165e-12)
 script = ExtResource("1_mgxbs")

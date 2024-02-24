@@ -62,3 +62,4 @@ func _input(event):
 			get_node("../../InventoryPanelInfo").itemCount = itemCount
 			get_node("../../InventoryPanelInfo/AnimationPlayer").play("TransitionIn")
 			get_node("../../InventoryPanelInfo").updateInfo()
+			get_node("../../../").process_mode = Node.PROCESS_MODE_DISABLED

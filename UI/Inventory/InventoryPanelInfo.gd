@@ -20,6 +20,7 @@ func updateInfo():
 
 func _on_exit_pressed():
 	get_node("AnimationPlayer").play("TransitionOut")
+	get_node("../../").process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _on_summon_pressed():
 	for i in Game.inventory:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b80lagw2juf2f"]
+[gd_scene load_steps=9 format=3 uid="uid://b80lagw2juf2f"]
 
 [ext_resource type="Script" path="res://UI/TitleScreen/StartScreen.gd" id="1_8nqqc"]
 [ext_resource type="PackedScene" uid="uid://1rsexs3ywkcd" path="res://UI/TitleScreen/TitleBackground/bg.tscn" id="2_vnlgf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c5p2i653wl0m6" path="res://art/Emilys Buttons/Button - hover.png" id="4_f8a3i"]
 [ext_resource type="Texture2D" uid="uid://ckweaeoywrhjm" path="res://art/Emilys Buttons/Button - quit.png" id="5_nc3i8"]
 [ext_resource type="Texture2D" uid="uid://ccwa0ors48cvx" path="res://art/Emilys Buttons/Button - quit hover.png" id="6_7q45b"]
+[ext_resource type="Texture2D" uid="uid://dsy1cjynsi28" path="res://art/Emilys Buttons/Title-sign.png" id="8_tqov1"]
 [ext_resource type="Texture2D" uid="uid://bt886ssl5hiyp" path="res://art/Sprout Land UI Sprite sheets/Icons/white icons.png" id="9_ah5rp"]
 
 [node name="MainScreen" type="Node2D"]
@@ -78,6 +79,14 @@ texture = ExtResource("9_ah5rp")
 hframes = 6
 vframes = 3
 frame = 3
+
+[node name="TitleSign" type="TextureRect" parent="."]
+offset_left = 328.0
+offset_top = 184.0
+offset_right = 848.0
+offset_bottom = 472.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_tqov1")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

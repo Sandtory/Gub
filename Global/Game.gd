@@ -39,7 +39,7 @@ var character_shop = {
 		"name": "Leafbug",
 		"cost": 50,
 		"description": "A leafbug can be used to gather resrouces and build",
-		"icon": preload("res://icon.png") 
+		"icon": preload("res://art/PreloadCharacterIcons/beetleguysmall.png") 
 	},
 	2: {
 		"name": "Beetle",

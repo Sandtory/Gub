@@ -77,6 +77,7 @@ expand_margin_bottom = 25.0
 font_size = 10
 
 [node name="InventoryPanelInfo" type="CanvasLayer"]
+process_mode = 3
 offset = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(1.5, 1.5)
 transform = Transform2D(1.5, 0, 0, 1.5, 2.08165e-12, 2.08165e-12)
