@@ -1,0 +1,99 @@
+[gd_scene load_steps=18 format=3 uid="uid://dqgvvuwxw7q3w"]
+
+[ext_resource type="Script" path="res://addons/grid_building/building_system/building_system.gd" id="1_m43u6"]
+[ext_resource type="PackedScene" uid="uid://cph840cfrtrob" path="res://Zones/game_world.tscn" id="1_rmq78"]
+[ext_resource type="Script" path="res://addons/grid_building/grid_targeting_system/grid_targeting_system.gd" id="2_2ef2j"]
+[ext_resource type="PackedScene" uid="uid://l00rt6twodlt" path="res://addons/grid_building/building_system/rule_check_indicator/rule_check_indicator_16x16.tscn" id="2_kmxss"]
+[ext_resource type="Script" path="res://addons/grid_building/building_system/building_rules/placement_validator.gd" id="3_6l3ny"]
+[ext_resource type="Script" path="res://addons/grid_building/building_system/building_rules/template_rules/collisions_check_rule.gd" id="3_m8146"]
+[ext_resource type="PackedScene" uid="uid://b85csecsg3tsa" path="res://addons/grid_building/grid_targeting_system/grid_targeter/grid_targeter.tscn" id="4_q4iak"]
+[ext_resource type="Resource" uid="uid://quer4blj21ej" path="res://Resources/main_building_signal_bus.tres" id="4_r4say"]
+[ext_resource type="Script" path="res://addons/grid_building/building_system/building_rules/template_rules/within_tilemap_bounds_rule.gd" id="4_x6ni2"]
+[ext_resource type="PackedScene" uid="uid://dv0ffj4hwq2md" path="res://UI/Game UI/GameUI.tscn" id="8_ay16b"]
+[ext_resource type="PackedScene" uid="uid://erm78oe3trac" path="res://addons/grid_building/ui/placement_selection/placeable_selection_ui.tscn" id="9_6kkvu"]
+[ext_resource type="Resource" uid="uid://3bqcm4w2821w" path="res://Buildings/CategoricalTags/living_quarters_tag.tres" id="10_dy16q"]
+[ext_resource type="Resource" uid="uid://b38o2jm8m03kb" path="res://Buildings/LivingQuarters/living_quarters_placeable.tres" id="10_jjtvu"]
+[ext_resource type="PackedScene" uid="uid://bui0pc2uo57iu" path="res://addons/grid_building/ui/game_log/build_log.tscn" id="14_b0lp4"]
+
+[sub_resource type="Resource" id="Resource_1vjy5"]
+script = ExtResource("3_m8146")
+pass_on_collision = false
+collision_mask = 1
+success_message = "No placement collisions found"
+expected_no_collisions_message = "Must have no collisions"
+expected_collisions_message = "Must overlap "
+prepend_resource_name = false
+append_layer_names = false
+layers_tested_prefix = " : Layers Checked: "
+no_indicators_message = "No tile collision indicators to check for collisions in placement"
+apply_to_objects_mask = 1
+visual_priority = 0
+
+[sub_resource type="Resource" id="Resource_4lee5"]
+script = ExtResource("4_x6ni2")
+success_message = "Placement is within map bounds"
+failed_message = "Tried placing outside of valid map area"
+no_indicators_message = "No tile collision indicators to check for within tilemap bounds."
+apply_to_objects_mask = 1
+visual_priority = 0
+
+[sub_resource type="Resource" id="Resource_5am5u"]
+script = ExtResource("3_6l3ny")
+base_rules = Array[Resource("res://addons/grid_building/building_system/building_rules/building_rule.gd")]([SubResource("Resource_1vjy5"), SubResource("Resource_4lee5")])
+all_succeeded_message = "All building placement validation checks passed"
+failed_validations_message = "--- Rules Failed ---"
+failed_message_base = "Failed Placement"
+show_debug_shapes = false
+
+[node name="Main" type="Node"]
+
+[node name="Systems" type="Node" parent="."]
+
+[node name="BuildingSystem" type="Node" parent="Systems" node_paths=PackedStringArray("placer", "positioner", "tilemap", "placed_objects_parent")]
+script = ExtResource("1_m43u6")
+placer = NodePath("../../World/GameWorld/ZoomCamera")
+positioner = NodePath("../../World/GridTargeter")
+tilemap = NodePath("../../World/GameWorld/TileMap")
+placed_objects_parent = NodePath("../../World/GameWorld/Buildings")
+rule_check_indicator_template = ExtResource("2_kmxss")
+placement_validator = SubResource("Resource_5am5u")
+building_signal_bus = ExtResource("4_r4say")
+exit_build_mode_action = &"exit_build"
+build_action = &"build"
+
+[node name="GridTargetingSystem" type="Node" parent="Systems" node_paths=PackedStringArray("positioner", "tilemap")]
+script = ExtResource("2_2ef2j")
+positioner = NodePath("../../World/GridTargeter")
+tilemap = NodePath("../../World/GameWorld/TileMap")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="GameWorld" parent="World" instance=ExtResource("1_rmq78")]
+
+[node name="GridTargeter" parent="World" instance=ExtResource("4_q4iak")]
+
+[node name="GameUI" parent="." instance=ExtResource("8_ay16b")]
+
+[node name="PlaceableSelectionUI" parent="GameUI" node_paths=PackedStringArray("building_system") instance=ExtResource("9_6kkvu")]
+anchor_left = 0.625926
+anchor_top = 0.504167
+anchor_bottom = 0.754167
+offset_left = 76.0
+offset_right = 76.0
+building_system = NodePath("../../Systems/BuildingSystem")
+open_actions = Array[StringName]([&"open_build"])
+category_tags = Array[Resource("res://addons/grid_building/categorical_tag.gd")]([ExtResource("10_dy16q")])
+placeables = Array[Resource("res://addons/grid_building/building_system/placeable/placeable.gd")]([ExtResource("10_jjtvu")])
+
+[node name="GameLog" parent="GameUI" instance=ExtResource("14_b0lp4")]
+anchor_left = 0.03
+anchor_top = 0.831
+anchor_right = 0.34
+anchor_bottom = 0.933
+offset_left = 714.4
+offset_top = -147.52
+offset_right = 714.4
+offset_bottom = -147.52
+building_signal_bus = ExtResource("4_r4say")
+
+[editable path="World/GameWorld"]

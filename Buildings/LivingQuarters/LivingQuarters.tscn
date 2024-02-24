@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://4s2aegsg45ik"]
+
+[ext_resource type="Texture2D" uid="uid://cvjnylcv5d6tx" path="res://art/Buildings/LivingQuarters.png" id="1_wibe0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4srfx"]
+size = Vector2(96, 80)
+
+[node name="LivingQuarters" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4srfx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 2.38419e-07)
+scale = Vector2(0.449005, 0.46164)
+texture = ExtResource("1_wibe0")
