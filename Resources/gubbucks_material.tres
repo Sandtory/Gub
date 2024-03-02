@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BaseItem" load_steps=2 format=3 uid="uid://buk3v4gaa75m2"]
+
+[ext_resource type="Script" path="res://addons/grid_building_inventory/items/base_item.gd" id="1_bttce"]
+
+[resource]
+script = ExtResource("1_bttce")
+display_name = "GubBucks"
+tags = Array[Resource]([])
+stack_maximum = 1000000

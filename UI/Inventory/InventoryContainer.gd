@@ -2,7 +2,7 @@ extends GridContainer
 
 @onready var item = preload("InventoryPanel.tscn")
 
-var invSize = 12
+var invSize = 9
 
 func _ready():
 	# load slots in

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BaseItemStack" load_steps=2 format=3 uid="uid://ddtfaf8tpfosi"]
+
+[ext_resource type="Script" path="res://addons/grid_building_inventory/items/base_item_stack.gd" id="1_n8se2"]
+
+[resource]
+script = ExtResource("1_n8se2")
+count = 0

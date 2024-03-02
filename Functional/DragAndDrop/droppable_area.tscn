@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ys3xisthsoyq"]
+
+[ext_resource type="Script" path="res://Functional/DragAndDrop/droppable_area.gd" id="1_o00ip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o48vp"]
+size = Vector2(128, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0oayk"]
+bg_color = Color(1, 0.576471, 0.513726, 1)
+
+[node name="DropableArea" type="StaticBody2D" groups=["dropable"]]
+position = Vector2(64, 32)
+script = ExtResource("1_o00ip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["dropable"]]
+shape = SubResource("RectangleShape2D_o48vp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0.266667, 0.435294, 0.572549)
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0oayk")

@@ -1,40 +1,71 @@
-class_name ZoomCamera
 extends Camera2D
 
-var last_drag_position = Vector2()
+@export var zoom_speed: float = 0.1
+@export var pan_speed: float = 1.0
+@export var rotation_speed: float = 1.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	set_process_input(true)
+@export var can_pan: bool
+@export var can_zoom: bool
+@export var can_rotate: bool
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var touch_points: Dictionary = {}
+var start_distance
+var start_zoom
+var start_angle
+var current_angle
 
-func _unhandled_input(event):
-	if event.is_action_pressed("up"):
-		zoom_on_cursor(0.9) # Zoom in
-	elif event.is_action_pressed("down"):
-		zoom_on_cursor(1.1) # Zoom out
+func _input(event):
+	if event is InputEventScreenTouch:
+		handle_touch(event)
+	elif event is InputEventScreenDrag:
+		handle_drag(event)
+		pass
 		
-	if Draggable.is_dragging == false:
-		if event is InputEventScreenDrag:
-			_handle_screen_drag(event)
-
-func zoom_on_cursor(zoom_factor: float):
-	var old_zoom := zoom
-	zoom *= zoom_factor
-
-	# Calculate the new position based on the mouse position
-	var local_mouse_position := get_local_mouse_position()
-	var viewport_size := get_viewport_rect().size
-	var offset_change := local_mouse_position * (zoom - old_zoom) / old_zoom
-	global_position += offset_change
-
-	# Optionally, you can clamp the camera position here
-	# to prevent it from going out of certain bounds.
+func handle_touch(event: InputEventScreenTouch):
+	if event.pressed:
+		touch_points[event.index] = event.position
+	else:
+		touch_points.erase(event.index)
 	
-func _handle_screen_drag(event: InputEventScreenDrag):
-	var drag_delta = event.relative
-	position -= drag_delta  # Move the camera opposite to drag direction
-	last_drag_position = event.position
+	if touch_points.size() == 2:
+		var touch_point_positions = touch_points.values()
+		start_distance = touch_point_positions[0].distance_to(touch_point_positions[1])
+		start_angle = get_angle(touch_point_positions[0], touch_point_positions[1])
+		start_zoom = zoom
+	elif touch_points.size() < 2:
+		start_distance = 0
+		
+func handle_drag(event: InputEventScreenDrag):
+	touch_points[event.index] = event.position
+	
+	if touch_points.size() == 1:
+		if can_pan:
+			offset -= event.relative.rotated(rotation) * pan_speed
+			
+	elif touch_points.size() == 2:
+		var touch_point_positions = touch_points.values()
+		var current_dist = touch_point_positions[0].distance_to(touch_point_positions[1])
+		var current_angle = get_angle(touch_point_positions[0], touch_point_positions[1])
+		var zoom_factor = start_distance / current_dist
+		
+		if can_zoom:
+			zoom = start_zoom / zoom_factor
+		if can_rotate:
+			rotation -= (current_angle - start_angle) * rotation_speed
+			start_angle = current_angle
+		limit_zoom(zoom)
+
+func limit_zoom(new_zoom):
+	if new_zoom.x < 0.1:
+		zoom.x = 0.1
+	if new_zoom.y < 0.1:
+		zoom.y = 0.1
+	if new_zoom.x > 10:
+		zoom.x = 10
+	if new_zoom.y > 10:
+		zoom.y = 10
+	
+
+func get_angle(p1, p2):
+	var delta = p2 - p1
+	return fmod((atan2(delta.y, delta.x) + PI), (2 * PI))

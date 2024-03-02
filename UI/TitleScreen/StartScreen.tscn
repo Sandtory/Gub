@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b80lagw2juf2f"]
+[gd_scene load_steps=8 format=3 uid="uid://b80lagw2juf2f"]
 
 [ext_resource type="Script" path="res://UI/TitleScreen/StartScreen.gd" id="1_8nqqc"]
 [ext_resource type="PackedScene" uid="uid://1rsexs3ywkcd" path="res://UI/TitleScreen/TitleBackground/bg.tscn" id="2_vnlgf"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://ckweaeoywrhjm" path="res://art/Emilys Buttons/Button - quit.png" id="5_nc3i8"]
 [ext_resource type="Texture2D" uid="uid://ccwa0ors48cvx" path="res://art/Emilys Buttons/Button - quit hover.png" id="6_7q45b"]
 [ext_resource type="Texture2D" uid="uid://dsy1cjynsi28" path="res://art/Emilys Buttons/Title-sign.png" id="8_tqov1"]
-[ext_resource type="Texture2D" path="res://art/Sprout Land UI Sprite sheets/Icons/white icons.png" id="9_ah5rp"]
 
 [node name="MainScreen" type="Node2D"]
 script = ExtResource("1_8nqqc")
@@ -65,6 +64,7 @@ scale = Vector2(4, 4)
 text = "Quit"
 
 [node name="OptionsButton" type="TextureButton" parent="."]
+visible = false
 offset_left = 968.0
 offset_top = 1808.0
 offset_right = 1048.0
@@ -75,7 +75,6 @@ stretch_mode = 0
 [node name="Icon" type="Sprite2D" parent="OptionsButton"]
 position = Vector2(40, 35.9999)
 scale = Vector2(3.213, 3.49999)
-texture = ExtResource("9_ah5rp")
 hframes = 6
 vframes = 3
 frame = 3

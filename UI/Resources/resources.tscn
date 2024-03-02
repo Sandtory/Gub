@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cuohw8cqjwppe"]
+[gd_scene load_steps=24 format=3 uid="uid://cuohw8cqjwppe"]
 
 [ext_resource type="Script" path="res://UI/Resources/resources.gd" id="1_4lnv3"]
 [ext_resource type="Texture2D" uid="uid://cxpns1qi0gie6" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="1_g5tw0"]
@@ -7,10 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dcvd5rceojryu" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Inventory/16.png" id="3_4ube4"]
 [ext_resource type="Texture2D" uid="uid://caknffvmwk2hl" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/03.png" id="3_qayme"]
 [ext_resource type="Texture2D" uid="uid://cals7kgrmu720" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/04.png" id="4_lgjdd"]
-[ext_resource type="Texture2D" uid="uid://c14mbenas0352" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/01.png" id="5_a1b37"]
-[ext_resource type="Texture2D" uid="uid://brio85pl0ygon" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/02.png" id="6_28cnk"]
-[ext_resource type="Texture2D" uid="uid://la3ot0dtaknp" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/03.png" id="7_y30vt"]
-[ext_resource type="Texture2D" uid="uid://vlss1lbdaxb0" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/04.png" id="8_rer4g"]
 [ext_resource type="Texture2D" uid="uid://4gqxfssj6p85" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/01.png" id="9_qmrrp"]
 [ext_resource type="Texture2D" uid="uid://ds2javyn77nuf" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/02.png" id="10_6oh0b"]
 [ext_resource type="Texture2D" uid="uid://cjsu566qavhu8" path="res://art/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/03.png" id="11_woxij"]
@@ -60,36 +56,6 @@ func _on_button_pressed():
 	Utils.save_game()
 "
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_byvj8"]
-frames = 4
-speed_scale = 4.0
-frame_0/texture = ExtResource("5_a1b37")
-frame_1/texture = ExtResource("6_28cnk")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("7_y30vt")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("8_rer4g")
-frame_3/duration = 1.0
-
-[sub_resource type="GDScript" id="GDScript_178er"]
-script/source = "extends Label
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	text = \"Gems: \" + str(Game.Gems)
-
-
-func _on_gem_button_pressed():
-	Game.Gems += 1
-	Utils.save_game()
-"
-
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_sa6gx"]
 frames = 7
 speed_scale = 4.0
@@ -134,70 +100,57 @@ scale = Vector2(0.6, 0.6)
 transform = Transform2D(0.6, 0, 0, 0.6, 0, 0)
 script = ExtResource("1_4lnv3")
 
-[node name="Panel" type="Panel" parent="."]
-offset_left = 120.0
-offset_top = 3026.67
-offset_right = 920.0
-offset_bottom = 3132.67
+[node name="GoldPanel" type="Panel" parent="."]
+offset_left = 80.0
+offset_top = 2973.0
+offset_right = 480.0
+offset_bottom = 3079.0
 theme = ExtResource("1_y24xl")
 theme_override_styles/panel = SubResource("StyleBoxTexture_el7py")
 
-[node name="GoldCoin" type="TextureRect" parent="Panel"]
+[node name="GoldCoin" type="TextureRect" parent="GoldPanel"]
 layout_mode = 2
-offset_top = -0.33374
-offset_right = 94.0
-offset_bottom = 93.6663
+offset_top = 13.6665
+offset_right = 80.0
+offset_bottom = 93.6665
 texture = SubResource("AnimatedTexture_3n6s4")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="GoldLabel" type="Label" parent="Panel"]
+[node name="GoldLabel" type="Label" parent="GoldPanel"]
 layout_mode = 2
-offset_left = 93.0
-offset_top = 26.0
-offset_right = 293.0
-offset_bottom = 71.0
+offset_left = 93.3333
+offset_top = 26.9998
+offset_right = 293.333
+offset_bottom = 79.9998
 label_settings = SubResource("LabelSettings_ng2k5")
 horizontal_alignment = 1
 script = SubResource("GDScript_81r2v")
 
-[node name="Gem" type="TextureRect" parent="Panel"]
-visible = false
-layout_mode = 2
-offset_left = 34.0
-offset_top = 34.0
-offset_right = 139.0
-offset_bottom = 139.0
-texture = SubResource("AnimatedTexture_byvj8")
-expand_mode = 4
-stretch_mode = 5
-
-[node name="GemLabel" type="Label" parent="Panel"]
-visible = false
-layout_mode = 2
-offset_left = 34.0
-offset_top = 75.0
-offset_right = 139.0
-offset_bottom = 98.0
-horizontal_alignment = 1
-script = SubResource("GDScript_178er")
-
-[node name="DewDrops" type="TextureRect" parent="Panel"]
-layout_mode = 2
-offset_left = 400.0
-offset_top = 13.0
+[node name="DewPanel" type="Panel" parent="."]
+offset_left = 80.0
+offset_top = 3080.0
 offset_right = 480.0
-offset_bottom = 93.0
+offset_bottom = 3186.0
+theme = ExtResource("1_y24xl")
+theme_override_styles/panel = SubResource("StyleBoxTexture_el7py")
+
+[node name="DewDrops" type="TextureRect" parent="DewPanel"]
+layout_mode = 2
+offset_left = 13.3333
+offset_top = 13.3333
+offset_right = 80.3333
+offset_bottom = 80.3333
 texture = SubResource("AnimatedTexture_sa6gx")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="DewLabel" type="Label" parent="Panel"]
+[node name="DewLabel" type="Label" parent="DewPanel"]
 layout_mode = 2
-offset_left = 520.0
-offset_top = 26.3333
-offset_right = 760.0
-offset_bottom = 79.3333
+offset_left = 93.3333
+offset_top = 26.6665
+offset_right = 293.333
+offset_bottom = 79.6665
 label_settings = SubResource("LabelSettings_wnw8r")
 horizontal_alignment = 1
 script = SubResource("GDScript_webu3")
@@ -242,6 +195,4 @@ scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("18_4p4ly")
 texture_pressed = ExtResource("19_778u7")
 
-[connection signal="pressed" from="GoldButton" to="Panel/GoldLabel" method="_on_button_pressed"]
-[connection signal="pressed" from="GemButton" to="Panel/GemLabel" method="_on_gem_button_pressed"]
-[connection signal="pressed" from="DewButton" to="Panel/DewLabel" method="_on_dew_button_pressed"]
+[connection signal="pressed" from="GoldButton" to="GoldPanel/GoldLabel" method="_on_button_pressed"]

@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var building = preload("res://UI/DragAndDrop/droppable_area.tscn")
+# @onready var building = preload("res://UI/DragAndDrop/droppable_area.tscn")
 var currTile
 
 var itemName = ""

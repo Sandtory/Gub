@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfkaoesrw60cx"]
+
+[ext_resource type="Script" path="res://Functional/DragAndDrop/V2/DropZone.gd" id="1_p6mri"]
+
+[node name="DropZone" type="Marker2D" groups=["zone"]]
+script = ExtResource("1_p6mri")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://dqgvvuwxw7q3w"]
+[gd_scene load_steps=21 format=3 uid="uid://dqgvvuwxw7q3w"]
 
+[ext_resource type="Script" path="res://Main/Main.gd" id="1_1nb40"]
 [ext_resource type="Script" path="res://addons/grid_building/building_system/building_system.gd" id="1_m43u6"]
 [ext_resource type="PackedScene" uid="uid://cph840cfrtrob" path="res://Zones/game_world.tscn" id="1_rmq78"]
 [ext_resource type="Script" path="res://addons/grid_building/grid_targeting_system/grid_targeting_system.gd" id="2_2ef2j"]
@@ -14,6 +15,8 @@
 [ext_resource type="Resource" uid="uid://3bqcm4w2821w" path="res://Buildings/CategoricalTags/living_quarters_tag.tres" id="10_dy16q"]
 [ext_resource type="Resource" uid="uid://b38o2jm8m03kb" path="res://Buildings/LivingQuarters/living_quarters_placeable.tres" id="10_jjtvu"]
 [ext_resource type="PackedScene" uid="uid://bui0pc2uo57iu" path="res://addons/grid_building/ui/game_log/build_log.tscn" id="14_b0lp4"]
+[ext_resource type="Texture2D" uid="uid://c22g4qvr7j8lt" path="res://art/Emilys Buttons/Small-build.png" id="15_1otbh"]
+[ext_resource type="Texture2D" uid="uid://kd2a226qvxvn" path="res://art/Emilys Buttons/Small-build hover.png" id="16_co3j3"]
 
 [sub_resource type="Resource" id="Resource_1vjy5"]
 script = ExtResource("3_m8146")
@@ -46,6 +49,7 @@ failed_message_base = "Failed Placement"
 show_debug_shapes = false
 
 [node name="Main" type="Node"]
+script = ExtResource("1_1nb40")
 
 [node name="Systems" type="Node" parent="."]
 
@@ -84,6 +88,7 @@ building_system = NodePath("../../Systems/BuildingSystem")
 open_actions = Array[StringName]([&"open_build"])
 category_tags = Array[Resource("res://addons/grid_building/categorical_tag.gd")]([ExtResource("10_dy16q")])
 placeables = Array[Resource("res://addons/grid_building/building_system/placeable/placeable.gd")]([ExtResource("10_jjtvu")])
+hide_ui_on_selection = true
 
 [node name="GameLog" parent="GameUI" instance=ExtResource("14_b0lp4")]
 anchor_left = 0.03
@@ -96,4 +101,13 @@ offset_right = 714.4
 offset_bottom = -147.52
 building_signal_bus = ExtResource("4_r4say")
 
-[editable path="World/GameWorld"]
+[node name="BuildToggle" type="TextureButton" parent="GameUI"]
+offset_left = 592.0
+offset_top = 1808.0
+offset_right = 744.0
+offset_bottom = 1960.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("15_1otbh")
+texture_pressed = ExtResource("16_co3j3")
+
+[connection signal="pressed" from="GameUI/BuildToggle" to="." method="_on_build_toggle_pressed"]

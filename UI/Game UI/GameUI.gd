@@ -33,14 +33,16 @@ func _on_close_button_pressed():
 	get_node("OpenInventory").show()
 
 
-func _on_exit_inventory_pressed():
-	get_node("InventoryUi/AnimationPlayer").play("InventoryClose")	
-	get_node("OpenInventory").show()
-	get_node("ExitInventory").hide()
-
 func _on_open_inventory_pressed():
 	get_node("InventoryUi").show()
 	get_node("ExitInventory").show()
 	get_node("InventoryUi/AnimationPlayer").play("InventoryOpen")
 	get_node("OpenInventory").hide()
 	get_node("InventoryUi/InventoryContainer").fillInventorySlots()
+
+
+func _on_exit_inventory_pressed():
+	get_node("InventoryUi/AnimationPlayer").play("InventoryClose")	
+	get_node("OpenInventory").show()
+	get_node("ExitInventory").hide()
+		

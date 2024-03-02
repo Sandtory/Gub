@@ -83,25 +83,25 @@ libraries = {
 }
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 72.0
-offset_top = 60.0
-offset_right = 1016.0
-offset_bottom = 180.0
+offset_left = 48.0
+offset_top = 56.0
+offset_right = 1032.0
+offset_bottom = 204.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_t2aqf")
 
 [node name="InventoryBanner" type="Panel" parent="."]
-offset_left = 288.0
-offset_top = -40.0
-offset_right = 437.0
-offset_bottom = 8.0
-scale = Vector2(3.5, 3.5)
+offset_left = 240.0
+offset_top = -56.0
+offset_right = 389.0
+offset_bottom = -8.0
+scale = Vector2(4, 4)
 theme_override_styles/panel = SubResource("StyleBoxTexture_dhfw4")
 
 [node name="InventoryContainer" type="GridContainer" parent="."]
-offset_left = 104.0
-offset_top = 92.0
-offset_right = 992.0
-offset_bottom = 156.0
+offset_left = 72.0
+offset_top = 88.0
+offset_right = 960.0
+offset_bottom = 178.0
 columns = 13
 script = ExtResource("4_tq2p5")
 
