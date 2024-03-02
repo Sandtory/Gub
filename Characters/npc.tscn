@@ -129,6 +129,7 @@ states/walk/position = Vector2(627, 111)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3nuoi"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_iwtef"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_7fncn")]
 
 [node name="Npc" type="CharacterBody2D"]
+position = Vector2(500, 1000)
 script = ExtResource("1_5bk8r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

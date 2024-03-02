@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqgvvuwxw7q3w"]
+[gd_scene load_steps=22 format=3 uid="uid://dqgvvuwxw7q3w"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_1nb40"]
 [ext_resource type="Script" path="res://addons/grid_building/building_system/building_system.gd" id="1_m43u6"]
@@ -12,10 +12,11 @@
 [ext_resource type="Script" path="res://addons/grid_building/building_system/building_rules/template_rules/within_tilemap_bounds_rule.gd" id="4_x6ni2"]
 [ext_resource type="PackedScene" uid="uid://dv0ffj4hwq2md" path="res://UI/Game UI/GameUI.tscn" id="8_ay16b"]
 [ext_resource type="PackedScene" uid="uid://erm78oe3trac" path="res://addons/grid_building/ui/placement_selection/placeable_selection_ui.tscn" id="9_6kkvu"]
-[ext_resource type="Resource" uid="uid://3bqcm4w2821w" path="res://Buildings/CategoricalTags/living_quarters_tag.tres" id="10_dy16q"]
 [ext_resource type="Resource" uid="uid://b38o2jm8m03kb" path="res://Buildings/LivingQuarters/living_quarters_placeable.tres" id="10_jjtvu"]
+[ext_resource type="Resource" uid="uid://c7w2v0tvmuskg" path="res://Buildings/CategoricalTags/building_tag.tres" id="14_3fdrp"]
 [ext_resource type="PackedScene" uid="uid://bui0pc2uo57iu" path="res://addons/grid_building/ui/game_log/build_log.tscn" id="14_b0lp4"]
 [ext_resource type="Texture2D" uid="uid://c22g4qvr7j8lt" path="res://art/Emilys Buttons/Small-build.png" id="15_1otbh"]
+[ext_resource type="Resource" uid="uid://b32yddnh8fshq" path="res://Functional/DragAndDrop/V2/dropzone_placeable.tres" id="15_stjvx"]
 [ext_resource type="Texture2D" uid="uid://kd2a226qvxvn" path="res://art/Emilys Buttons/Small-build hover.png" id="16_co3j3"]
 
 [sub_resource type="Resource" id="Resource_1vjy5"]
@@ -81,13 +82,14 @@ tilemap = NodePath("../../World/GameWorld/TileMap")
 [node name="PlaceableSelectionUI" parent="GameUI" node_paths=PackedStringArray("building_system") instance=ExtResource("9_6kkvu")]
 anchor_left = 0.625926
 anchor_top = 0.504167
-anchor_bottom = 0.754167
+anchor_right = 0.92963
+anchor_bottom = 0.775
 offset_left = 76.0
 offset_right = 76.0
 building_system = NodePath("../../Systems/BuildingSystem")
 open_actions = Array[StringName]([&"open_build"])
-category_tags = Array[Resource("res://addons/grid_building/categorical_tag.gd")]([ExtResource("10_dy16q")])
-placeables = Array[Resource("res://addons/grid_building/building_system/placeable/placeable.gd")]([ExtResource("10_jjtvu")])
+category_tags = Array[Resource("res://addons/grid_building/categorical_tag.gd")]([ExtResource("14_3fdrp")])
+placeables = Array[Resource("res://addons/grid_building/building_system/placeable/placeable.gd")]([ExtResource("10_jjtvu"), ExtResource("15_stjvx")])
 hide_ui_on_selection = true
 
 [node name="GameLog" parent="GameUI" instance=ExtResource("14_b0lp4")]
@@ -95,10 +97,10 @@ anchor_left = 0.03
 anchor_top = 0.831
 anchor_right = 0.34
 anchor_bottom = 0.933
-offset_left = 714.4
-offset_top = -147.52
-offset_right = 714.4
-offset_bottom = -147.52
+offset_left = 719.6
+offset_top = -99.5199
+offset_right = 719.6
+offset_bottom = -99.52
 building_signal_bus = ExtResource("4_r4say")
 
 [node name="BuildToggle" type="TextureButton" parent="GameUI"]

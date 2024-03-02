@@ -1,10 +1,11 @@
-[gd_scene load_steps=124 format=3 uid="uid://cpa3rron1m5qo"]
+[gd_scene load_steps=125 format=3 uid="uid://cpa3rron1m5qo"]
 
 [ext_resource type="Script" path="res://UI/Shop/Shop.gd" id="1_jefje"]
 [ext_resource type="Texture2D" uid="uid://ckd1ls8prysvg" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Inventory/Menu.png" id="2_fmf3j"]
 [ext_resource type="Texture2D" uid="uid://dcvd5rceojryu" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Inventory/16.png" id="3_5imp1"]
 [ext_resource type="Texture2D" uid="uid://x6glt1n666oe" path="res://art/Emilys Buttons/Button - clear.png" id="4_btyww"]
 [ext_resource type="Texture2D" uid="uid://d2lbvc1ui5fyn" path="res://art/Emilys Buttons/Button - clear hover.png" id="5_5mmf1"]
+[ext_resource type="Texture2D" uid="uid://vka6gsef72bc" path="res://art/PreloadCharacterIcons/beetleguysmall.png" id="5_w2u0l"]
 [ext_resource type="Texture2D" uid="uid://boejwv7of01fj" path="res://art/Treasure Hunters/Wood and Paper UI/Sprites/Small Banner/Small Banner.png" id="6_uyrb3"]
 [ext_resource type="Texture2D" uid="uid://c341s4d562uxl" path="res://art/Ground/Spritesheets/Leafbug.png" id="7_1mc2w"]
 [ext_resource type="Texture2D" uid="uid://cgjr5blpxfqv4" path="res://art/Flying/Spritesheets/Clampbeetle.png" id="7_4me7m"]
@@ -367,6 +368,14 @@ region = Rect2(960, 0, 96, 96)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_w2u0l")
+}],
+"loop": true,
+"name": &"Beetle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2tls5")
 }, {
 "duration": 1.0,
@@ -391,7 +400,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xothu")
 }],
 "loop": true,
-"name": &"Beetle",
+"name": &"ClampBeetle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -775,7 +784,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_6tqmx")
 position = Vector2(90, 88)
 scale = Vector2(1.675, 1.675)
 sprite_frames = SubResource("SpriteFrames_7ah2x")
-animation = &"Leafbug"
+animation = &"Beetle"
 autoplay = "Fly"
 
 [node name="Panel" type="Panel" parent="Control"]

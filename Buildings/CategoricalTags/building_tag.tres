@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CategoricalTag" load_steps=2 format=3 uid="uid://c7w2v0tvmuskg"]
+
+[ext_resource type="Script" path="res://addons/grid_building/categorical_tag.gd" id="2_12dy4"]
+
+[resource]
+script = ExtResource("2_12dy4")
+display_name = &"Buildings"

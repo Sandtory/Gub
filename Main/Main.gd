@@ -1,6 +1,5 @@
 extends Node
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,4 +11,5 @@ func _process(delta):
 
 
 func _on_build_toggle_pressed():
-	pass # Replace with function body.
+	var selection_ui = get_node("GameUI/PlaceableSelectionUI")
+	selection_ui.show()

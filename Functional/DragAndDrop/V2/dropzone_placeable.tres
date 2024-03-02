@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Placeable" load_steps=5 format=3 uid="uid://b32yddnh8fshq"]
+
+[ext_resource type="Script" path="res://addons/grid_building/building_system/placeable/placeable.gd" id="1_cet5t"]
+[ext_resource type="Texture2D" uid="uid://cvjnylcv5d6tx" path="res://art/Buildings/LivingQuarters.png" id="1_r6lit"]
+[ext_resource type="PackedScene" uid="uid://dfkaoesrw60cx" path="res://Functional/DragAndDrop/V2/DropZone.tscn" id="2_3hb4t"]
+[ext_resource type="Resource" uid="uid://c7w2v0tvmuskg" path="res://Buildings/CategoricalTags/building_tag.tres" id="4_gmopt"]
+
+[resource]
+script = ExtResource("1_cet5t")
+display_name = &"Drop Zone"
+icon = ExtResource("1_r6lit")
+packed_scene = ExtResource("2_3hb4t")
+tags = Array[Resource]([ExtResource("4_gmopt")])
+placement_rules = Array[Resource("res://addons/grid_building/building_system/building_rules/building_rule.gd")]([])
+preview_excluded_nodes = Array[NodePath]([])
+ignore_base_rules = false
+rotateable = false
+flippable_h = false
+flippable_v = false

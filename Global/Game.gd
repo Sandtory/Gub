@@ -29,23 +29,23 @@ var livingQuarters_owned = false
 # Shop dictionary
 var character_shop = {
 	0: {
-		"name": "Fly",
+		"name": "Beetle",
 		"cost": 10,
-		"description": "A fly can be used to scout on missions.",
-		"icon": preload("res://art/PreloadCharacterIcons/GiantFly.png")
+		"description": "A Beetle can be used to gather gold.",
+		"icon": preload("res://art/PreloadCharacterIcons/beetleguysmall.png")
 		
 	},
 	1: {
-		"name": "Leafbug",
+		"name": "ClampBeetle",
 		"cost": 50,
-		"description": "A leafbug can be used to gather resrouces and build",
-		"icon": preload("res://art/PreloadCharacterIcons/beetleguysmall.png") 
+		"description": "A clamp beetle can be used to gather resources and build",
+		"icon": preload("res://art/PreloadCharacterIcons/Clampbeetle.png") 
 	},
 	2: {
-		"name": "Beetle",
+		"name": "Fly",
 		"cost": 130,
 		"description": "A beetle can be used to protect your base.",
-		"icon": preload("res://art/PreloadCharacterIcons/Clampbeetle.png")
+		"icon": preload("res://art/PreloadCharacterIcons/GiantFly.png")
 	},
 	3: {
 		"name": "Locust",
@@ -83,10 +83,10 @@ var building_shop = {
 
 var inventory = {
 	0: {
-		"name": "Fly",
+		"name": "Beetle",
 		"cost": 10,
-		"description": "A fly can be used to scout on missions.",
-		"icon": preload("res://art/PreloadCharacterIcons/GiantFly.png"),
+		"description": "A Beetle can be used to gather gold.",
+		"icon": preload("res://art/PreloadCharacterIcons/beetleguysmall.png"),
 		"count": 1,
 	},
 }

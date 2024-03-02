@@ -1,5 +1,10 @@
 extends CanvasLayer
 
+var wasp = preload("res://Characters/npc.tscn")
+var draggable_character = preload("res://Functional/DragAndDrop/V2/Draggable.tscn")
+
+@onready var game_world = get_node("../../../World/GameWorld")
+
 var itemName = ""
 var itemDes = ""
 var itemCost = 0
@@ -42,5 +47,9 @@ func _on_summon_pressed():
 				Game.inventory[i]["count"] -= 1
 			get_node("../InventoryContainer").fillInventorySlots()
 
+			#Instantiate the NPC
+			var character_scene = draggable_character.instantiate()
+			game_world.add_child(character_scene)
+			
 
 

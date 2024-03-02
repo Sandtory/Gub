@@ -14,6 +14,15 @@ var start_zoom
 var start_angle
 var current_angle
 
+func _process(delta):
+	if Draggable.is_dragging == true:
+		can_pan = false
+		can_zoom = false
+	else:
+		can_pan = true
+		can_zoom = true
+		
+
 func _input(event):
 	if event is InputEventScreenTouch:
 		handle_touch(event)

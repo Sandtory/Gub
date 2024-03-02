@@ -3,7 +3,8 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	modulate = Color(Color.AZURE, 0.3)
+	#modulate = Color(Color.AZURE, 0.3)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
