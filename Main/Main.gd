@@ -1,5 +1,7 @@
 extends Node
 
+var button_toggle = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,5 +13,12 @@ func _process(delta):
 
 
 func _on_build_toggle_pressed():
-	var selection_ui = get_node("GameUI/PlaceableSelectionUI")
-	selection_ui.show()
+	var building_system = get_node("Systems/BuildingSystem")
+	if button_toggle:
+		get_node("GameUI/PlaceableSelectionUI/TabContainer").show()
+		button_toggle = false
+		return
+	if not button_toggle:
+		get_node("GameUI/PlaceableSelectionUI/TabContainer").hide()
+		button_toggle = true
+		return

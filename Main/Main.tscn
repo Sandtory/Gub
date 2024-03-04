@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dqgvvuwxw7q3w"]
+[gd_scene load_steps=21 format=3 uid="uid://dqgvvuwxw7q3w"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_1nb40"]
 [ext_resource type="Script" path="res://addons/grid_building/building_system/building_system.gd" id="1_m43u6"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" path="res://addons/grid_building/building_system/building_rules/template_rules/within_tilemap_bounds_rule.gd" id="4_x6ni2"]
 [ext_resource type="PackedScene" uid="uid://dv0ffj4hwq2md" path="res://UI/Game UI/GameUI.tscn" id="8_ay16b"]
 [ext_resource type="PackedScene" uid="uid://erm78oe3trac" path="res://addons/grid_building/ui/placement_selection/placeable_selection_ui.tscn" id="9_6kkvu"]
-[ext_resource type="Resource" uid="uid://b38o2jm8m03kb" path="res://Buildings/LivingQuarters/living_quarters_placeable.tres" id="10_jjtvu"]
 [ext_resource type="Resource" uid="uid://c7w2v0tvmuskg" path="res://Buildings/CategoricalTags/building_tag.tres" id="14_3fdrp"]
 [ext_resource type="PackedScene" uid="uid://bui0pc2uo57iu" path="res://addons/grid_building/ui/game_log/build_log.tscn" id="14_b0lp4"]
 [ext_resource type="Texture2D" uid="uid://c22g4qvr7j8lt" path="res://art/Emilys Buttons/Small-build.png" id="15_1otbh"]
@@ -89,7 +88,7 @@ offset_right = 76.0
 building_system = NodePath("../../Systems/BuildingSystem")
 open_actions = Array[StringName]([&"open_build"])
 category_tags = Array[Resource("res://addons/grid_building/categorical_tag.gd")]([ExtResource("14_3fdrp")])
-placeables = Array[Resource("res://addons/grid_building/building_system/placeable/placeable.gd")]([ExtResource("10_jjtvu"), ExtResource("15_stjvx")])
+placeables = Array[Resource("res://addons/grid_building/building_system/placeable/placeable.gd")]([ExtResource("15_stjvx")])
 hide_ui_on_selection = true
 
 [node name="GameLog" parent="GameUI" instance=ExtResource("14_b0lp4")]
@@ -112,4 +111,5 @@ scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("15_1otbh")
 texture_pressed = ExtResource("16_co3j3")
 
+[connection signal="gui_input" from="GameUI/BuildToggle" to="." method="_on_build_toggle_gui_input"]
 [connection signal="pressed" from="GameUI/BuildToggle" to="." method="_on_build_toggle_pressed"]

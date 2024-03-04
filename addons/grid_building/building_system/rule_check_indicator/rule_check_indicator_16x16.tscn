@@ -20,7 +20,6 @@ target_position = Vector2(0, 0)
 collide_with_areas = true
 script = ExtResource("1_3yut8")
 validity_sprite = NodePath("ValiditySprite2D")
-show_indicators = null
 valid_settings = SubResource("Resource_v0i4u")
 invalid_settings = SubResource("Resource_x1l1p")
 debug_mode = null
