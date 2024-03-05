@@ -283,7 +283,7 @@ func set_buildable_preview(placeable: Placeable) -> bool:
 	placement_validator.tear_down()
 	placement_shapes = []
 
-	if preview_instance:
+	if is_instance_valid(preview_instance):
 		preview_instance.free()
 
 	preview_instance = _generate_preview_scene(placeable)

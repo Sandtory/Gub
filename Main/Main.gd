@@ -1,6 +1,10 @@
 extends Node
 
 var button_toggle = true
+@onready var tab_container = get_node("GameUI/PlaceableSelectionUI/TabContainer")
+@onready var exit_build = InputEventAction.new()
+@onready var open_build = InputEventAction.new()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,12 +17,16 @@ func _process(delta):
 
 
 func _on_build_toggle_pressed():
-	var building_system = get_node("Systems/BuildingSystem")
 	if button_toggle:
-		get_node("GameUI/PlaceableSelectionUI/TabContainer").show()
+		open_build.action = "open_build"
+		open_build.pressed = true
+		Input.parse_input_event(open_build)
 		button_toggle = false
 		return
 	if not button_toggle:
-		get_node("GameUI/PlaceableSelectionUI/TabContainer").hide()
+		tab_container.hide()
+		exit_build.action = "exit_build"
+		exit_build.pressed = true
+		Input.parse_input_event(exit_build)
 		button_toggle = true
 		return
