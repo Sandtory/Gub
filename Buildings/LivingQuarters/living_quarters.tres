@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=2 format=3 uid="uid://23et4rip1njm"]
+
+[ext_resource type="Script" path="res://Functional/DragAndDrop/V2/Droppable.gd" id="1_xi0b2"]
+
+[resource]
+script = ExtResource("1_xi0b2")
+type = "LivingQuarters"
+size = Rect2(-96, -96, 192, 192)
+slots = 2

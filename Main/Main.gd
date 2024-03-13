@@ -5,7 +5,6 @@ var button_toggle = true
 @onready var exit_build = InputEventAction.new()
 @onready var open_build = InputEventAction.new()
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

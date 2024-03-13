@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqgvvuwxw7q3w"]
+[gd_scene load_steps=23 format=3 uid="uid://dqgvvuwxw7q3w"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_1nb40"]
 [ext_resource type="Script" path="res://addons/grid_building/building_system/building_system.gd" id="1_m43u6"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://c22g4qvr7j8lt" path="res://art/Emilys Buttons/Small-build.png" id="15_1otbh"]
 [ext_resource type="Resource" uid="uid://b32yddnh8fshq" path="res://Functional/DragAndDrop/V2/dropzone_placeable.tres" id="15_stjvx"]
 [ext_resource type="Texture2D" uid="uid://kd2a226qvxvn" path="res://art/Emilys Buttons/Small-build hover.png" id="16_co3j3"]
+[ext_resource type="PackedScene" uid="uid://cgsmo8657adi3" path="res://addons/grid_building_inventory/ui/resource_display/resource_display.tscn" id="18_rhrw8"]
+[ext_resource type="Resource" uid="uid://bd6v4vtvm5oi2" path="res://Resources/item_container_locator.tres" id="19_txxnm"]
 
 [sub_resource type="Resource" id="Resource_1vjy5"]
 script = ExtResource("3_m8146")
@@ -69,6 +71,7 @@ build_action = &"build"
 script = ExtResource("2_2ef2j")
 positioner = NodePath("../../World/GridTargeter")
 tilemap = NodePath("../../World/GameWorld/TileMap")
+allow_diaganol_tile_moves = false
 
 [node name="World" type="Node2D" parent="."]
 
@@ -101,6 +104,7 @@ offset_top = -99.5199
 offset_right = 719.6
 offset_bottom = -99.52
 building_signal_bus = ExtResource("4_r4say")
+show_validation_message = true
 
 [node name="BuildToggle" type="TextureButton" parent="GameUI"]
 offset_left = 592.0
@@ -111,5 +115,8 @@ scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("15_1otbh")
 texture_pressed = ExtResource("16_co3j3")
 
-[connection signal="gui_input" from="GameUI/BuildToggle" to="." method="_on_build_toggle_gui_input"]
+[node name="ResourceDisplay" parent="GameUI" node_paths=PackedStringArray("resource_holder") instance=ExtResource("18_rhrw8")]
+resource_holder = NodePath("../..")
+locator = ExtResource("19_txxnm")
+
 [connection signal="pressed" from="GameUI/BuildToggle" to="." method="_on_build_toggle_pressed"]

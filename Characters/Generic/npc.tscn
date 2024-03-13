@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://2u08qtttmcvj"]
 
-[ext_resource type="Script" path="res://Characters/Npc.gd" id="1_5bk8r"]
+[ext_resource type="Script" path="res://Characters/Generic/Npc.gd" id="1_5bk8r"]
 [ext_resource type="Texture2D" uid="uid://crsn7clwtpav4" path="res://art/Flying/Spritesheets/Firewasp.png" id="2_5fvlu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8g15x"]

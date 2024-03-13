@@ -11,8 +11,9 @@ func _ready():
 	pass
 
 func _on_purchase_button_pressed():
+	var gubbucks_resource = load("res://Resources/baseitem_stack.tres").count
 	var hasItem = false
-	if Game.GubBucks >= Game.character_shop[currItem]["cost"]:
+	if gubbucks_resource >= Game.character_shop[currItem]["cost"]:
 		for i in Game.inventory:
 			if Game.inventory[i]["name"] == Game.character_shop[currItem]["name"]:
 				Game.inventory[i]["count"] += 1
@@ -21,7 +22,7 @@ func _on_purchase_button_pressed():
 				var tempDic = Game.character_shop[currItem]
 				tempDic["count"] = 1
 				Game.inventory[Game.inventory.size()] = tempDic
-		Game.GubBucks -= Game.character_shop[currItem]["cost"]
+		gubbucks_resource -= Game.character_shop[currItem]["cost"]
 	else:
 		print("Not enough GubBucks")
 	print(Game.inventory)

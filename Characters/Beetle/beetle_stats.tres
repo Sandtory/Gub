@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=2 format=3 uid="uid://c72krei0jjstf"]
+
+[ext_resource type="Script" path="res://Characters/Stats.gd" id="1_xsaxo"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_xsaxo")
+insectType = "Beetle"
+name = "Gubben"
+characterColor = "Green"
+health = 10
+level = 1
+experience = 0

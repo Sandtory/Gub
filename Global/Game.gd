@@ -1,30 +1,8 @@
 extends Node
 
-
-var GubBucks = 10000
+var GubBucks = 0
 var Gems = 0
 var DewDrops = 0
-
-
-# Character values
-
-# Locust
-var locust_owned = false
-var locust_amount = []
-
-
-# Fly
-var fly_owned = false
-
-
-# Beetle
-
-
-# Building values
-
-# Building one
-var livingQuarters_owned = false
-
 
 # Shop dictionary
 var character_shop = {

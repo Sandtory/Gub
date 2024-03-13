@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccvh7s172wwaa"]
+
+[ext_resource type="PackedScene" uid="uid://dfkaoesrw60cx" path="res://Functional/DragAndDrop/V2/DropZone.tscn" id="1_jvqs2"]
+
+[node name="Building" type="Node2D"]
+
+[node name="DropZone" parent="." instance=ExtResource("1_jvqs2")]

@@ -23,6 +23,7 @@ func _on_shop_button_pressed():
 	get_node("OpenInventory").hide()
 	get_node("InventoryUi").hide()
 	get_node("ExitInventory").hide()
+	get_node("BuildToggle").hide()
 
 
 func _on_close_button_pressed():
@@ -31,6 +32,7 @@ func _on_close_button_pressed():
 	get_node("ShopButton").show()
 	get_node("CloseButton").hide()
 	get_node("OpenInventory").show()
+	get_node("BuildToggle").show()
 
 
 func _on_open_inventory_pressed():

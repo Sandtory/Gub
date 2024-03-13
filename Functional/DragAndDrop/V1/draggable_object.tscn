@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ci3xayx0amehi"]
 
-[ext_resource type="Script" path="res://Functional/DragAndDrop/draggable_object.gd" id="1_7udmn"]
-[ext_resource type="Texture2D" uid="uid://bvofae455n7ox" path="res://art/Flying/Spritesheets/Flying Locust.png" id="2_1px1v"]
+[ext_resource type="Script" path="res://Functional/DragAndDrop/V1/draggable_object.gd" id="1_5tv2f"]
+[ext_resource type="Texture2D" uid="uid://bvofae455n7ox" path="res://art/Flying/Spritesheets/Flying Locust.png" id="2_ctp3y"]
 
 [sub_resource type="Animation" id="Animation_i0x0a"]
 length = 0.001
@@ -47,10 +47,10 @@ height = 48.0
 
 [node name="DragableObject" type="Node2D"]
 position = Vector2(472, 1504)
-script = ExtResource("1_7udmn")
+script = ExtResource("1_5tv2f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1px1v")
+texture = ExtResource("2_ctp3y")
 hframes = 14
 vframes = 9
 

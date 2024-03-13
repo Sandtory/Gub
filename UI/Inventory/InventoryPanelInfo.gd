@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-var wasp = preload("res://Characters/npc.tscn")
 var draggable_character = preload("res://Functional/DragAndDrop/V2/Draggable.tscn")
 
 @onready var game_world = get_node("../../../World/GameWorld")
@@ -16,7 +15,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func updateInfo():

@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfkaoesrw60cx"]
+[gd_scene load_steps=4 format=3 uid="uid://dfkaoesrw60cx"]
 
 [ext_resource type="Script" path="res://Functional/DragAndDrop/V2/DropZone.gd" id="1_p6mri"]
+[ext_resource type="Resource" uid="uid://23et4rip1njm" path="res://Buildings/LivingQuarters/living_quarters.tres" id="2_2l74m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a12ph"]
-size = Vector2(48, 48)
+size = Vector2(192, 192)
 
 [node name="DropZone" type="Marker2D" groups=["zone"]]
 script = ExtResource("1_p6mri")
+droppable_resource = ExtResource("2_2l74m")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

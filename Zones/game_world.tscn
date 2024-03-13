@@ -1,21 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://cph840cfrtrob"]
+[gd_scene load_steps=18 format=3 uid="uid://cph840cfrtrob"]
 
 [ext_resource type="Texture2D" uid="uid://85cqhjscjy3b" path="res://art/NatureBackground/nature_7/Summer3.png" id="1_0xke0"]
 [ext_resource type="Script" path="res://Zones/game_world.gd" id="1_nm765"]
 [ext_resource type="PackedScene" uid="uid://df8bew2e0p4jk" path="res://Zones/zoom_camera.tscn" id="2_bjnbi"]
 [ext_resource type="Script" path="res://addons/grid_building_inventory/inventory/item_container.gd" id="3_0egkp"]
 [ext_resource type="Texture2D" uid="uid://cyt8k3l5avy53" path="res://art/Custom/TreeBg.png" id="4_66y83"]
-[ext_resource type="Script" path="res://addons/grid_building_inventory/items/base_item_stack.gd" id="4_d1qv4"]
+[ext_resource type="Resource" uid="uid://ddix47dw1gf0b" path="res://Resources/baseitem_stack.tres" id="4_pc3tm"]
 [ext_resource type="Texture2D" uid="uid://bv26khsk8ohpy" path="res://art/Aventure_Tiles/Assets/Assets.png" id="5_rw3df"]
-[ext_resource type="Resource" uid="uid://buk3v4gaa75m2" path="res://Resources/gubbucks_material.tres" id="5_xqrdk"]
 [ext_resource type="Texture2D" uid="uid://cirirw7r66geh" path="res://art/GrafxKid/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="8_1w7vk"]
 [ext_resource type="Texture2D" uid="uid://dpcigfxjfycxd" path="res://art/GrafxKid/Cave Tileset/Brown_Tile_Terrain (16 x 16).png" id="10_typhe"]
 [ext_resource type="Texture2D" uid="uid://ck15tsde5yo00" path="res://art/GrafxKid/Cave Tileset/Gray_Tile_Terrain (16 x 16).png" id="10_xci23"]
-
-[sub_resource type="Resource" id="Resource_c83dy"]
-script = ExtResource("4_d1qv4")
-type = ExtResource("5_xqrdk")
-count = 10000
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mp0l"]
 texture = ExtResource("10_typhe")
@@ -883,7 +877,7 @@ script = ExtResource("1_nm765")
 
 [node name="ItemContainer" type="Node" parent="ZoomCamera"]
 script = ExtResource("3_0egkp")
-_slots = Array[ExtResource("4_d1qv4")]([SubResource("Resource_c83dy")])
+_slots = Array[Resource("res://addons/grid_building_inventory/items/base_item_stack.gd")]([ExtResource("4_pc3tm")])
 
 [node name="Background" type="TextureRect" parent="."]
 offset_left = -2000.0

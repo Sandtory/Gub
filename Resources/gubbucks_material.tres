@@ -6,4 +6,4 @@
 script = ExtResource("1_bttce")
 display_name = "GubBucks"
 tags = Array[Resource]([])
-stack_maximum = 1000000
+stack_maximum = 10000
