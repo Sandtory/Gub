@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mcwnmugatc76" path="res://Functional/DragAndDrop/V2/Draggable.tscn" id="1_p244t"]
 [ext_resource type="Script" path="res://Characters/Stats.gd" id="2_8tdwj"]
 
-[sub_resource type="Resource" id="Resource_3odlr"]
+[sub_resource type="Resource" id="Resource_d76cc"]
 resource_local_to_scene = true
 script = ExtResource("2_8tdwj")
 insectType = "Beetle"
@@ -24,15 +24,12 @@ scale = Vector2(2, 2)
 
 [node name="Object" parent="." instance=ExtResource("1_p244t")]
 position = Vector2(0, 0)
-stats = SubResource("Resource_3odlr")
+stats = SubResource("Resource_d76cc")
 
 [node name="Animation" parent="Object" index="0"]
 frame_progress = 0.372753
 
-[node name="InputRegister" parent="Object" index="1"]
-visible = true
-
-[node name="Pointer" parent="Object" index="2"]
+[node name="Pointer" parent="Object" index="1"]
 visible = false
 offset_top = -24.0
 offset_bottom = -1.90735e-06

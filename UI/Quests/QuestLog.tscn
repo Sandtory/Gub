@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://uig2k4wbm6dl"]
+
+[ext_resource type="Script" path="res://UI/Quests/QuestLog.gd" id="1_ghkrd"]
+
+[node name="QuestLog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ghkrd")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 624.0
+offset_top = 64.0
+offset_right = 1024.0
+offset_bottom = 608.0
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 544.0
+
+[node name="Quests" type="VBoxContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Active" type="VBoxContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Completed" type="VBoxContainer" parent="Panel/TabContainer"]
+layout_mode = 2
+
+[node name="QuestButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 1744.0
+offset_right = 950.0
+offset_bottom = 1806.0
+scale = Vector2(2, 2)
+text = "Quests"
+
+[connection signal="pressed" from="QuestButton" to="." method="_on_quest_button_pressed"]

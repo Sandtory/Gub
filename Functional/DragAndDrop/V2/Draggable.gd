@@ -1,13 +1,10 @@
 extends Node2D
 
 @export var stats : CharacterStats
-@onready var timer = $Timer
-
-signal mouse_released
 
 var highlighted = false
-var is_dragging = false
 var selected = false
+var is_dragging = false
 var rest_point
 var rest_nodes = []
 
@@ -28,55 +25,37 @@ func _ready():
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
-		selected = true
-		for child in rest_nodes:
-			if child.global_position == rest_point:
-				child.set_available()
-		
-func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			# Click detected outside the character, set highlighted to false
-			highlighted = false
-			get_node("Pointer").hide()
-			get_node("InputRegister").show()
-			get_node("Name").hide()
-			get_node("StatsPanel").hide()
-			
-			
+		print("area 2d click")
+		update_character_stats()
+		if highlighted:
+			selected = true
+			for child in rest_nodes:
+				if child.global_position == rest_point:
+					child.set_available()
+		elif not highlighted:
+			highlighted = true
+			_show_details()
 
-func _get_character_stats():
-	get_node("Animation").play(stats.characterColor)
-	get_node("Name").text = stats.name
-	get_node("StatsPanel/Health").text = "Health: " + str(stats.health)
-	get_node("StatsPanel/Level").text = "Level: " + str(stats.level)
-	get_node("StatsPanel/XP").text = "XP: " + str(stats.experience)
+# Function for handling events that are not on the area 2D, copies of same area 2D's does not count as unhandled input
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("click"):
+		print("Unhandled click")
+		# Click detected outside the character, set highlighted to false
+		highlighted = false
+		_hide_details()
+			
+			
 
 func _physics_process(delta):
 	if selected:
 		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
-		look_at(get_global_mouse_position())
 	else:
 		global_position = lerp(global_position, rest_point, 10 * delta)
 		rotation = lerp_angle(rotation, 0, 10 * delta)
-"""
+
 func _input(event):
-	rest_nodes = get_tree().get_nodes_in_group("zone")
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-			selected = false
-			Draggable.is_dragging = false
-			var shortest_dist = 88
-			for child in rest_nodes:
-				var distance = global_position.distance_to(child.global_position)
-				if distance < shortest_dist:
-					child.select()
-					rest_point = child.global_position
-					shortest_dist = distance
-					
-"""
-func _input(event):
-	if event is InputEventMouseButton and not event.pressed:
+		print("input event")
 		selected = false
 		var shortest_dist = 88
 		var closest_free_zone = null
@@ -91,26 +70,25 @@ func _input(event):
 			# Mark the chosen DropZone as occupied
 			closest_free_zone.occupy()
 			# Optionally, free the previous DropZone if moving from another
+			
+			
+func _get_character_stats():
+	get_node("Animation").play(stats.characterColor)
+	get_node("Name").text = stats.name
+	get_node("StatsPanel/Health").text = "Health: " + str(stats.health)
+	get_node("StatsPanel/Level").text = "Level: " + str(stats.level)
+	get_node("StatsPanel/XP").text = "XP: " + str(stats.experience)
 
-func _on_button_pressed():
-	highlighted = true
+func _show_details():
 	get_node("Pointer").show()
-	get_node("InputRegister").hide()
 	get_node("Name").show()
 	get_node("StatsPanel").show()
-	
 
+func _hide_details():
+	get_node("Pointer").hide()
+	get_node("Name").hide()
+	get_node("StatsPanel").hide()
 
-
-func _on_timer_timeout():
-	if not is_dragging:
-		selected = true
-		await mouse_released
-		selected = false
-
-
-func _on_input_register_button_up():
-	if not timer.is_stopped():
-		timer.stop()
-		await mouse_released
-		selected = false
+func update_character_stats():
+	stats.gainxp(10)
+	_get_character_stats()

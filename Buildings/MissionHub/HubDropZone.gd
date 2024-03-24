@@ -30,3 +30,6 @@ func set_available():
 	
 func update_visuals_for_occupancy():
 	modulate = Color.WHITE if is_occupied == false else Color.GRAY
+	
+func open_mission_menu():
+	pass

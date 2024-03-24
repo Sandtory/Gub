@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Droppable" load_steps=2 format=3 uid="uid://c6i05de03j0hr"]
+
+[ext_resource type="Script" path="res://Functional/DragAndDrop/V2/Droppable.gd" id="1_mf5dx"]
+
+[resource]
+script = ExtResource("1_mf5dx")
+type = "MissionHub"
+size = Rect2(-112, -112, 224, 196)
+slots = 4

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcdaolu2udb8t"]
+
+[ext_resource type="Script" path="res://Buildings/MissionHub/HubDropZone.gd" id="1_fsm8p"]
+[ext_resource type="Resource" uid="uid://c6i05de03j0hr" path="res://Buildings/MissionHub/mission_hub.tres" id="2_r6imu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5jle"]
+size = Vector2(256, 128)
+
+[node name="MissionHub" type="Node2D"]
+
+[node name="HubDropZone" type="Marker2D" parent="." groups=["zone"]]
+script = ExtResource("1_fsm8p")
+droppable_resource = ExtResource("2_r6imu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="HubDropZone"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubDropZone/StaticBody2D"]
+shape = SubResource("RectangleShape2D_m5jle")

@@ -221,21 +221,14 @@ stats = ExtResource("2_er3r0")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x3823")
 animation = &"Blue"
-frame_progress = 0.117174
+frame_progress = 0.0676347
 
 [node name="Area2D" type="Area2D" parent="Animation"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Area2D"]
 shape = SubResource("CapsuleShape2D_ovrx6")
-
-[node name="InputRegister" type="Button" parent="."]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
-action_mode = 0
 
 [node name="Pointer" type="TextureRect" parent="."]
 offset_top = -16.0
@@ -245,16 +238,4 @@ rotation = -2.35619
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_pcnxv")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true
-
-[connection signal="body_entered" from="Animation/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Animation/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="input_event" from="Animation/Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Animation/Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Animation/Area2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="button_down" from="InputRegister" to="." method="_on_input_register_button_down"]
-[connection signal="button_up" from="InputRegister" to="." method="_on_input_register_button_up"]
-[connection signal="pressed" from="InputRegister" to="." method="_on_button_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -11,7 +11,9 @@ var possible_names = ["Bum", "Jit", "Scur", "Twis", "Grub", "Mud", "Dun", "Glim"
 
 func _ready():
 	#get_node("Panel/Label").text = str(occupied_count) + "/" + str(dropzones.size())
-	pass
+	for q in QuestManager.Quests.keys():
+		QuestManager.addQuest(q)
+		print(QuestManager.ActiveQuests)
 	
 func _on_buy_button_pressed():
 	var beetle_instance = beetle.instantiate()
