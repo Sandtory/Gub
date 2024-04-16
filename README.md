@@ -11,3 +11,11 @@ Bee:
 Ant:
 
 <img width="102" alt="Screenshot 2024-04-16 at 18 36 50" src="https://github.com/Sandtory/Gub/assets/82057616/c1d970df-269a-4eb4-a15d-c7e71e208a7e">
+
+Game world:
+
+![TreeUnderground](https://github.com/Sandtory/Gub/assets/82057616/1636e7b7-627c-4e0c-9330-8b845ea9dbf4)
+
+Loading screen:
+
+![DALL·E 2024-01-09 10 55 36 - Create a pixel art loading screen for a bug-themed game, consistent with the established UI design and character art style 1](https://github.com/Sandtory/Gub/assets/82057616/6852339f-39ff-4e30-9d55-5af337684636)
