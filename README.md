@@ -1,7 +1,5 @@
 A game created in Godot 4 engine. Its a strategic collection game where you collect insects called Gubs. These insects are used to harvest and collect resources. Here are some of the characters:
 
-<img width="572" alt="Screenshot 2024-04-16 at 18 35 22" src="https://github.com/Sandtory/Gub/assets/82057616/f7f7e9f7-cecd-4c20-83c1-78724a65612a">
-
 Beetle:
 <img width="128" alt="Screenshot 2024-04-16 at 18 36 43" src="https://github.com/Sandtory/Gub/assets/82057616/2410c3ff-5ac4-42b2-894d-54a894940a2b">
 
